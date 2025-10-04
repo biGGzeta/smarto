@@ -1,0 +1,68 @@
+{
+  "decisions": [
+    {
+      "timestamp": "2025-10-04T04:51:32.471108",
+      "session_id": "20251004_045059",
+      "signal_type": "HOLD",
+      "confidence": 50,
+      "expected_move_pct": null,
+      "risk_reward_ratio": null,
+      "price_target": null,
+      "stop_loss": null,
+      "timeframe": "short",
+      "decision_reasoning": [
+        "\ud83d\udcca Determinar estrategia principal seg\u00fan r\u00e9gimen del mercado",
+        "\u274c market_regime_analysis: Condici\u00f3n no cumplida",
+        "\ud83d\udcca An\u00e1lisis de estructura de extremos en mercado calmo",
+        "\u2705 extremes_structure_analysis: Condici\u00f3n cumplida",
+        "\ud83d\udcca Evaluar fuerza de estructura alcista",
+        "\u274c bullish_structure_strength: Condici\u00f3n no cumplida",
+        "\ud83d\udcca Estructura alcista d\u00e9bil",
+        "\u274c bullish_weak_structure: Condici\u00f3n no cumplida",
+        "HOLD: BULLISH_STRUCTURE_WAIT (categor\u00eda: wait_for_clarity)"
+      ],
+      "decision_path_length": 9,
+      "trading_recommendations": {
+        "primary_action": "HOLD",
+        "confidence_level": "BAJA",
+        "position_sizing": "40% del tama\u00f1o normal de posici\u00f3n",
+        "entry_strategy": "Esperar confirmaci\u00f3n adicional antes de entrar",
+        "risk_management": {
+          "position_review": "Revisar en 3-6 horas"
+        },
+        "time_horizon": "short",
+        "market_context": "mercado lateral, cerca de resistencia semanal"
+      },
+      "confidence_analysis": {
+        "positive_factors": [
+          "Extremos alineados (estructura clara)",
+          "Tendencia fuerte y definida",
+          "Momentum fuerte (8.1%)"
+        ],
+        "negative_factors": [],
+        "neutral_factors": [
+          "Estructura de extremos d\u00e9bil"
+        ],
+        "overall_confidence": 50
+      },
+      "quality_metrics": {
+        "feature_completeness": 71.69811320754717,
+        "signal_confidence": 50,
+        "decision_path_length": 9,
+        "risk_reward_quality": 0,
+        "market_condition_clarity": 100,
+        "data_quality_score": 100
+      },
+      "executive_summary": "\ud83d\udcca SITUACI\u00d3N: LOW_VOLATILITY (vol 2.4%) | \ud83d\udccd POSICI\u00d3N: ZONA ALTA (84% del rango semanal) | \ud83c\udfd7\ufe0f ESTRUCTURA: Estructura CRECIENTES | \u26a1 MOMENTUM 3D: ALCISTA FUERTE (+8.1%) | \ud83c\udfaf SE\u00d1AL: HOLD (confianza 50%)",
+      "market_conditions_at_decision": {
+        "regime": "low_volatility",
+        "volatility": 2.413,
+        "momentum_3d": 8.1,
+        "price_position": 84.49117118835329,
+        "extremes_alignment": true
+      }
+    }
+  ],
+  "total_decisions": 1,
+  "last_updated": "2025-10-04T04:51:32.505116"
+}

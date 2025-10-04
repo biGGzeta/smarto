@@ -1,0 +1,22 @@
+{
+  "session_id": "20251004_045312",
+  "symbol": "ETHUSD_PERP",
+  "start_time": "2025-10-04T04:53:12.948835",
+  "user": "biGGzeta",
+  "timezone": "UTC",
+  "version": "1.0",
+  "last_analysis": "2025-10-04T04:53:45.290766",
+  "total_analyses": 1,
+  "current_market_state": {
+    "price": 4496.25,
+    "regime": "low_volatility",
+    "volatility": 2.413,
+    "momentum_3d": 8.1,
+    "position_pct": 84.32587930513837
+  },
+  "latest_signal": {
+    "type": "HOLD",
+    "confidence": 50,
+    "reasoning_summary": "HOLD: BULLISH_STRUCTURE_WAIT (categor\u00eda: wait_for_clarity)"
+  }
+}

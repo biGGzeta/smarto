@@ -1,0 +1,34 @@
+# Trading Analysis Dependencies
+pandas
+numpy
+requests
+
+# Machine Learning Dependencies
+scikit-learn
+scipy
+
+# Data Handling & Processing
+python-dateutil
+pytz
+
+# Optional ML Libraries (para futuro)
+xgboost
+lightgbm
+catboost
+
+# Development & Testing (opcional)
+pytest>=7.4.0
+jupyter>=1.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Async support (si usas async)
+aiohttp
+asyncio
+
+# Logging & Monitoring (opcional)
+loguru
+
+# File handling
+openpyxl # Para Excel files
+h5py      # Para HDF5 files

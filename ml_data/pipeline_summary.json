@@ -1,0 +1,45 @@
+{
+  "total_executions": 5,
+  "signal_distribution": {
+    "HOLD": 5
+  },
+  "regime_distribution": {
+    "low_volatility": 5
+  },
+  "average_confidence": 50.0,
+  "first_execution": "2025-10-04T04:28:07.165104",
+  "last_execution": "2025-10-04T04:53:45.247758",
+  "quality_trends": [
+    {
+      "timestamp": "2025-10-04T04:28:07.165104",
+      "feature_completeness": 69.81132075471697,
+      "signal_confidence": 50,
+      "market_clarity": 100
+    },
+    {
+      "timestamp": "2025-10-04T04:36:34.119286",
+      "feature_completeness": 71.69811320754717,
+      "signal_confidence": 50,
+      "market_clarity": 100
+    },
+    {
+      "timestamp": "2025-10-04T04:42:26.325663",
+      "feature_completeness": 71.69811320754717,
+      "signal_confidence": 50,
+      "market_clarity": 100
+    },
+    {
+      "timestamp": "2025-10-04T04:51:32.434575",
+      "feature_completeness": 71.69811320754717,
+      "signal_confidence": 50,
+      "market_clarity": 100
+    },
+    {
+      "timestamp": "2025-10-04T04:53:45.247758",
+      "feature_completeness": 71.69811320754717,
+      "signal_confidence": 50,
+      "market_clarity": 100
+    }
+  ],
+  "total_confidence": 250
+}

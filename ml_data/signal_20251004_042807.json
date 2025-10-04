@@ -1,0 +1,21 @@
+{
+  "signal_type": "HOLD",
+  "confidence": 50,
+  "reasoning": [
+    "\ud83d\udcca Determinar estrategia principal seg\u00fan r\u00e9gimen del mercado",
+    "\u274c market_regime_analysis: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis de estructura de extremos en mercado calmo",
+    "\u2705 extremes_structure_analysis: Condici\u00f3n cumplida",
+    "\ud83d\udcca Evaluar fuerza de estructura alcista",
+    "\u274c bullish_structure_strength: Condici\u00f3n no cumplida",
+    "\ud83d\udcca Estructura alcista d\u00e9bil",
+    "\u274c bullish_weak_structure: Condici\u00f3n no cumplida",
+    "HOLD: BULLISH_STRUCTURE_WAIT (categor\u00eda: wait_for_clarity)"
+  ],
+  "price_target": null,
+  "stop_loss": null,
+  "timeframe": "short",
+  "expected_move_pct": null,
+  "risk_reward_ratio": null,
+  "timestamp": "2025-10-04T04:28:07.231154"
+}
