@@ -1,0 +1,27 @@
+{
+  "signal_type": "WEAK_BUY",
+  "confidence": 60,
+  "reasoning": [
+    "\ud83d\udcca Determinar estrategia principal seg\u00fan r\u00e9gimen del mercado",
+    "\u274c market_regime_analysis: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis de estructura de extremos en mercado calmo",
+    "\u274c extremes_structure_analysis: Condici\u00f3n no cumplida",
+    "\ud83d\udcca Verificar estructura bajista consistente",
+    "\u274c bearish_structure_check: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis estructura divergente",
+    "\u274c mixed_structure_check: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis momentum en estructura estable",
+    "\u2705 stable_structure_momentum: Condici\u00f3n cumplida",
+    "\ud83d\udcca An\u00e1lisis zonas en mercado estable",
+    "\u274c stable_zone_analysis: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis desbalance en mercado estable",
+    "\u2705 stable_zone_imbalance: Condici\u00f3n cumplida",
+    "BUY: STABLE_OVERSOLD (momentum 3d: +0.0%, categor\u00eda: stable_oversold)"
+  ],
+  "price_target": 4607.03425,
+  "stop_loss": 4516.25525,
+  "timeframe": "short",
+  "expected_move_pct": 1.5,
+  "risk_reward_ratio": 3.0000000000000453,
+  "timestamp": "2025-10-05T12:10:06.927706"
+}

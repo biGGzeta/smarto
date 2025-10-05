@@ -1,0 +1,23 @@
+{
+  "signal_type": "SELL",
+  "confidence": 70,
+  "reasoning": [
+    "\ud83d\udcca Determinar estrategia principal seg\u00fan r\u00e9gimen del mercado",
+    "\u274c market_regime_analysis: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis de estructura de extremos en mercado calmo",
+    "\u274c extremes_structure_analysis: Condici\u00f3n no cumplida",
+    "\ud83d\udcca Verificar estructura bajista consistente",
+    "\u2705 bearish_structure_check: Condici\u00f3n cumplida",
+    "\ud83d\udcca Evaluar fuerza de estructura bajista",
+    "\u274c bearish_structure_strength: Condici\u00f3n no cumplida",
+    "\ud83d\udcca Estructura bajista d\u00e9bil",
+    "\u2705 bearish_weak_structure: Condici\u00f3n cumplida",
+    "SELL: BEARISH_EARLY_STRUCTURE (momentum 3d: 0.0%, categor\u00eda: early_structure)"
+  ],
+  "price_target": 4422.6303,
+  "stop_loss": 4512.429899999999,
+  "timeframe": "short",
+  "expected_move_pct": -1.5,
+  "risk_reward_ratio": 3.000000000000051,
+  "timestamp": "2025-10-04T21:35:12.160339"
+}

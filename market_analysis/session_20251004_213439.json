@@ -1,0 +1,22 @@
+{
+  "session_id": "20251004_213439",
+  "symbol": "ETHUSD_PERP",
+  "start_time": "2025-10-04T21:34:39.967286",
+  "user": "biGGzeta",
+  "timezone": "UTC",
+  "version": "1.0",
+  "last_analysis": "2025-10-04T21:35:12.176342",
+  "total_analyses": 1,
+  "current_market_state": {
+    "price": 4489.98,
+    "regime": "low_volatility",
+    "volatility": 2.405,
+    "momentum_3d": 0.0,
+    "position_pct": 83.329359970756
+  },
+  "latest_signal": {
+    "type": "SELL",
+    "confidence": 70,
+    "reasoning_summary": "SELL: BEARISH_EARLY_STRUCTURE (momentum 3d: 0.0%, categor\u00eda: early_structure)"
+  }
+}

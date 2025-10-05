@@ -1,0 +1,54 @@
+{
+  "timestamp": "2025-10-05T13:21:50.871774",
+  "pipeline_version": "1.0",
+  "quality_metrics": {
+    "feature_completeness": 50.943396226415096,
+    "signal_confidence": 60,
+    "decision_path_length": 15,
+    "risk_reward_quality": 100,
+    "market_condition_clarity": 25,
+    "data_quality_score": 100
+  },
+  "ml_data": {
+    "feature_count": 53,
+    "target_multiclass": 2,
+    "target_binary_buy": 1,
+    "target_binary_sell": 0,
+    "target_confidence": 60,
+    "signal_type": "WEAK_BUY",
+    "regime": "unknown"
+  },
+  "market_conditions": {
+    "regime": "unknown",
+    "volatility": 0.0,
+    "trend_strength": 0.0,
+    "price_position_pct": 86.93935164626018,
+    "momentum_3d": 0.0,
+    "extremes_alignment": true
+  },
+  "signal_summary": {
+    "type": "WEAK_BUY",
+    "confidence": 60,
+    "timeframe": "short",
+    "expected_move_pct": 1.5,
+    "risk_reward_ratio": 3.0000000000000515,
+    "reasoning_count": 15
+  },
+  "decision_path": [
+    "\ud83d\udcca Determinar estrategia principal seg\u00fan r\u00e9gimen del mercado",
+    "\u274c market_regime_analysis: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis de estructura de extremos en mercado calmo",
+    "\u274c extremes_structure_analysis: Condici\u00f3n no cumplida",
+    "\ud83d\udcca Verificar estructura bajista consistente",
+    "\u274c bearish_structure_check: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis estructura divergente",
+    "\u274c mixed_structure_check: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis momentum en estructura estable",
+    "\u2705 stable_structure_momentum: Condici\u00f3n cumplida",
+    "\ud83d\udcca An\u00e1lisis zonas en mercado estable",
+    "\u274c stable_zone_analysis: Condici\u00f3n no cumplida",
+    "\ud83d\udcca An\u00e1lisis desbalance en mercado estable",
+    "\u2705 stable_zone_imbalance: Condici\u00f3n cumplida",
+    "BUY: STABLE_OVERSOLD (momentum 3d: +0.0%, categor\u00eda: stable_oversold)"
+  ]
+}

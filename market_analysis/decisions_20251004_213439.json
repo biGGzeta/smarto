@@ -1,0 +1,74 @@
+{
+  "decisions": [
+    {
+      "timestamp": "2025-10-04T21:35:12.172340",
+      "session_id": "20251004_213439",
+      "signal_type": "SELL",
+      "confidence": 70,
+      "expected_move_pct": -1.5,
+      "risk_reward_ratio": 3.000000000000051,
+      "price_target": 4422.6303,
+      "stop_loss": 4512.429899999999,
+      "timeframe": "short",
+      "decision_reasoning": [
+        "\ud83d\udcca Determinar estrategia principal seg\u00fan r\u00e9gimen del mercado",
+        "\u274c market_regime_analysis: Condici\u00f3n no cumplida",
+        "\ud83d\udcca An\u00e1lisis de estructura de extremos en mercado calmo",
+        "\u274c extremes_structure_analysis: Condici\u00f3n no cumplida",
+        "\ud83d\udcca Verificar estructura bajista consistente",
+        "\u2705 bearish_structure_check: Condici\u00f3n cumplida",
+        "\ud83d\udcca Evaluar fuerza de estructura bajista",
+        "\u274c bearish_structure_strength: Condici\u00f3n no cumplida",
+        "\ud83d\udcca Estructura bajista d\u00e9bil",
+        "\u2705 bearish_weak_structure: Condici\u00f3n cumplida",
+        "SELL: BEARISH_EARLY_STRUCTURE (momentum 3d: 0.0%, categor\u00eda: early_structure)"
+      ],
+      "decision_path_length": 11,
+      "trading_recommendations": {
+        "primary_action": "SELL",
+        "confidence_level": "ALTA",
+        "position_sizing": "80% del tama\u00f1o normal de posici\u00f3n",
+        "entry_strategy": "Entrada en 2 partes: 60% inmediato, 40% en retroceso",
+        "risk_management": {
+          "stop_loss": "$4512.43",
+          "take_profit": "$4422.63",
+          "position_review": "Revisar en 3-6 horas"
+        },
+        "time_horizon": "short",
+        "market_context": "mercado lateral, cerca de resistencia semanal"
+      },
+      "confidence_analysis": {
+        "positive_factors": [
+          "Extremos alineados (estructura clara)",
+          "Excelente R:R (3.0:1)",
+          "Tendencia fuerte y definida"
+        ],
+        "negative_factors": [
+          "Desalineaci\u00f3n entre trend y momentum"
+        ],
+        "neutral_factors": [
+          "Estructura de extremos d\u00e9bil"
+        ],
+        "overall_confidence": 70
+      },
+      "quality_metrics": {
+        "feature_completeness": 69.81132075471697,
+        "signal_confidence": 70,
+        "decision_path_length": 11,
+        "risk_reward_quality": 100,
+        "market_condition_clarity": 100,
+        "data_quality_score": 100
+      },
+      "executive_summary": "\ud83d\udcca SITUACI\u00d3N: LOW_VOLATILITY (vol 2.4%) | \ud83d\udccd POSICI\u00d3N: ZONA ALTA (83% del rango semanal) | \ud83c\udfd7\ufe0f ESTRUCTURA: Estructura DECRECIENTES | \u26a1 MOMENTUM 3D: NEUTRAL (0.0%) | \ud83c\udfaf SE\u00d1AL: SELL (confianza 70%)",
+      "market_conditions_at_decision": {
+        "regime": "low_volatility",
+        "volatility": 2.405,
+        "momentum_3d": 0.0,
+        "price_position": 83.329359970756,
+        "extremes_alignment": true
+      }
+    }
+  ],
+  "total_decisions": 1,
+  "last_updated": "2025-10-04T21:35:12.175341"
+}
