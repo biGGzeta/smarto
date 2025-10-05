@@ -1,657 +1,641 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Sistema de Trading Adaptativo con ML + Interpretación Probabilística
+Integra análisis adaptativo + ML + interpretación probabilística de señales
+Autor: biGGzeta
+Fecha: 2025-10-04
+Actualizado: 2025-10-04 22:56:45 UTC
+"""
+
+import sys
+import os
 import asyncio
 import pandas as pd
-from typing import Dict, Any, Tuple
+import numpy as np
+from datetime import datetime, timedelta
+import warnings
+import json
+from typing import Dict, List, Any, Tuple, Optional
+
+# Suprimir warnings
+warnings.filterwarnings('ignore')
+
+# Agregar path para imports locales
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Imports locales CORREGIDOS - Usando tus módulos existentes
 from data.csv_handler import BinanceDataDownloader
-from analysis.adaptive_low_time_analyzer import AdaptiveLowTimeAnalyzer
-from analysis.adaptive_high_time_analyzer import AdaptiveHighTimeAnalyzer
-from analysis.adaptive_percentage_analyzer import AdaptivePercentageAnalyzer
-from analysis.adaptive_panorama_analyzer import AdaptivePanoramaAnalyzer
-from analysis.adaptive_weekly_analyzer import AdaptiveWeeklyAnalyzer
-from analysis.max_min_analyzer import MaxMinAnalyzer  # Mantener el original para comparación
+from analysis.max_min_analyzer import MaxMinAnalyzer
+from analysis.percentage_analyzer import PercentageAnalyzer
+from analysis.low_time_analyzer import LowTimeAnalyzer
+from analysis.high_time_analyzer import HighTimeAnalyzer
+from analysis.panorama_analyzer import PanoramaAnalyzer
+from analysis.weekly_analyzer import WeeklyAnalyzer
+from ml.adaptive_ml_system import AdaptiveMLSystem
 from utils.logger import QALogger
 from config.settings import BinanceConfig
 
-# Importar sistema ML
-from ml.adaptive_ml_system import AdaptiveMLSystem
-from ml.feature_engineering import MarketFeatures
-from ml.decision_tree import TradingSignal, SignalType
-
-# Importar logger de análisis profundo
-from analysis.market_data_logger import MarketDataLogger
-
 class AdaptiveTradingMLSystem:
-    """Sistema principal que combina análisis adaptativo + ML + señales automáticas + logging completo"""
+    """Sistema completo: Análisis Adaptativo + ML + Interpretación Probabilística"""
     
     def __init__(self, symbol: str = "ETHUSD_PERP", enable_ml: bool = True, enable_logging: bool = True):
         self.symbol = symbol
-        self.downloader = BinanceDataDownloader(symbol)
-        
-        # Analizadores adaptativos (existentes)
-        self.adaptive_low_analyzer = AdaptiveLowTimeAnalyzer(symbol)
-        self.adaptive_high_analyzer = AdaptiveHighTimeAnalyzer(symbol)
-        self.adaptive_percentage_analyzer = AdaptivePercentageAnalyzer(symbol)
-        self.adaptive_panorama_analyzer = AdaptivePanoramaAnalyzer(symbol)
-        self.adaptive_weekly_analyzer = AdaptiveWeeklyAnalyzer(symbol)
-        self.original_max_min_analyzer = MaxMinAnalyzer(symbol)
-        
-        # Sistema ML (NUEVO)
-        self.ml_system = AdaptiveMLSystem(save_data=enable_ml) if enable_ml else None
         self.enable_ml = enable_ml
-        
-        # Logger de análisis profundo (NUEVO)
-        self.market_logger = MarketDataLogger(symbol) if enable_logging else None
         self.enable_logging = enable_logging
         
-        self.logger = QALogger(symbol)
-        self.analysis_cache = {}
+        # Inicializar componentes principales (usando tus módulos existentes)
+        self.downloader = BinanceDataDownloader(symbol)
+        self.max_min_analyzer = MaxMinAnalyzer(symbol)
+        self.percentage_analyzer = PercentageAnalyzer(symbol)
+        self.low_time_analyzer = LowTimeAnalyzer(symbol)
+        self.high_time_analyzer = HighTimeAnalyzer(symbol)
+        self.panorama_analyzer = PanoramaAnalyzer(symbol)
+        self.weekly_analyzer = WeeklyAnalyzer(symbol)
+        
+        # Logger QA
+        if enable_logging:
+            self.logger = QALogger(symbol)
+        
+        # Componentes ML
+        if enable_ml:
+            self.ml_system = AdaptiveMLSystem(symbol)
+        
+        # Variables para reutilizar datos
+        self.last_data = None
+        self.last_48h_data = None
+        self.last_weekly_data = None
         
         print(f"🎯 Sistema inicializado para {symbol}")
-        print(f"   🤖 ML: {'✅ Habilitado' if enable_ml else '❌ Deshabilitado'}")
-        print(f"   📝 Logging: {'✅ Habilitado' if enable_logging else '❌ Deshabilitado'}")
+        if enable_ml:
+            print(f"   🤖 ML: ✅ Habilitado")
+        if enable_logging:
+            print(f"   📝 Logging: ✅ Habilitado")
+    
+    def run_complete_analysis_with_ml(self) -> Dict[str, Any]:
+        """Ejecutar análisis completo: Adaptativo + ML + Interpretación"""
         
-    def run_complete_analysis_with_ml(self, hours_3h: float = 3, hours_48h: float = 48) -> Dict[str, Any]:
-        """Ejecutar análisis completo: Adaptativo + ML + Señales + Logging"""
+        timestamp = datetime.utcnow()
         
-        print("🚀 Iniciando Sistema Completo: Análisis Adaptativo + ML + Logging")
+        print(f"\n🚀 Iniciando Sistema Completo: Análisis Adaptativo + ML + Logging")
         print("=" * 75)
         print(f"📊 Símbolo: {self.symbol}")
-        print(f"🕐 Timestamp: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
+        print(f"🕐 Timestamp: {timestamp.strftime('%Y-%m-%d %H:%M:%S')} UTC")
         print(f"👤 Usuario: biGGzeta")
         print(f"🤖 ML habilitado: {self.enable_ml}")
         print(f"📝 Logging profundo: {self.enable_logging}")
         print("=" * 75)
         
-        # FASE 1: Análisis adaptativo (como antes)
-        print("\n🔧 FASE 1: Ejecutando análisis adaptativo...")
-        adaptive_results = self._run_adaptive_analysis(hours_3h, hours_48h)
-        
-        if not self.enable_ml:
-            print("ℹ️  ML deshabilitado, retornando solo análisis adaptativo")
-            return {"adaptive_results": adaptive_results, "status": "adaptive_only"}
-        
-        # FASE 2: ML Pipeline (NUEVO)
-        print("\n🤖 FASE 2: Ejecutando pipeline ML...")
-        ml_results = self.ml_system.analyze_and_signal(adaptive_results)
-        
-        # FASE 3: Análisis integrado
-        print("\n📊 FASE 3: Generando análisis integrado...")
-        integrated_analysis = self._create_integrated_analysis(adaptive_results, ml_results)
-        
-        # FASE 4: Logging completo (NUEVO)
-        if self.enable_logging and self.market_logger:
-            print("\n📝 FASE 4: Guardando análisis profundo...")
-            try:
-                report_file = self.market_logger.log_complete_analysis(
-                    adaptive_results, ml_results, integrated_analysis
-                )
-                integrated_analysis['analysis_report_file'] = report_file
-                
-                # Crear dashboard data
-                dashboard_file = self.market_logger.create_analysis_dashboard_data()
-                integrated_analysis['dashboard_data_file'] = dashboard_file
-                
-                print(f"✅ Logging completado - Archivos generados en market_analysis/")
-                
-            except Exception as e:
-                print(f"⚠️ Error en logging: {str(e)}")
-                integrated_analysis['logging_error'] = str(e)
-        
-        # FASE 5: Debug detallado de decisiones (NUEVO)
-        if integrated_analysis.get("status") == "success":
-            print("\n🔍 FASE 5: Debug detallado del árbol de decisiones...")
-            self._debug_decision_tree_path(ml_results.get("features"))
-        
-        return integrated_analysis
+        try:
+            # FASE 1: Análisis Adaptativo Completo (usando tu sistema existente)
+            print(f"\n🔧 FASE 1: Ejecutando análisis adaptativo...")
+            adaptive_results = self._run_adaptive_analysis()
+            
+            if not adaptive_results:
+                return {"status": "error", "message": "Error en análisis adaptativo"}
+            
+            # FASE 2: Pipeline ML (si está habilitado)
+            ml_results = {}
+            if self.enable_ml:
+                print(f"\n🤖 FASE 2: Ejecutando pipeline ML...")
+                try:
+                    ml_results = self.ml_system.analyze_and_signal(adaptive_results)
+                    print(f"✅ Pipeline ML completado: {ml_results['signal'].signal_type.value} (confianza: {ml_results['signal'].confidence}%)")
+                except Exception as e:
+                    print(f"❌ Error en pipeline ML: {str(e)}")
+                    return {"status": "error_ml", "ml_error": str(e), "adaptive_results": adaptive_results}
+            
+            # FASE 3: Análisis Integrado
+            print(f"\n📊 FASE 3: Generando análisis integrado...")
+            integrated_analysis = self._create_integrated_analysis(adaptive_results, ml_results)
+            
+            # FASE 4: Debug detallado del árbol de decisiones
+            if self.enable_ml and ml_results:
+                print(f"\n🔍 FASE 4: Debug detallado del árbol de decisiones...")
+                self._debug_decision_tree(ml_results)
+            
+            # Resultado final
+            result = {
+                "status": "success",
+                "timestamp": timestamp.isoformat(),
+                "symbol": self.symbol,
+                "adaptive_results": adaptive_results,
+                "ml_results": ml_results,
+                "integrated_analysis": integrated_analysis,
+                "executive_summary": self._generate_executive_summary(adaptive_results, ml_results),
+                "trading_signal": self._extract_trading_signal(ml_results),
+                "trading_recommendations": self._generate_trading_recommendations(ml_results),
+                "confidence_analysis": self._analyze_confidence_factors(adaptive_results, ml_results)
+            }
+            
+            return result
+            
+        except Exception as e:
+            print(f"❌ Error en análisis completo: {str(e)}")
+            return {"status": "error", "message": str(e)}
     
-    def _run_adaptive_analysis(self, hours_3h: float, hours_48h: float) -> Dict[str, Any]:
-        """Ejecutar análisis adaptativo (código existente)"""
+    def _run_adaptive_analysis(self) -> Dict[str, Any]:
+        """Ejecutar las 6 preguntas adaptativas usando tu sistema existente"""
         
         results = {}
         
-        # Pregunta 1: Máximos y mínimos básicos
-        print("\n📊 PREGUNTA 1: Máximos y mínimos básicos")
-        result1 = self._ask_max_min_last_hours(hours_3h)
-        results["max_min_basic"] = result1
-        
-        # Pregunta 2: Análisis de porcentajes adaptativo
-        print("\n📊 PREGUNTA 2: Análisis de porcentajes adaptativo")
-        result2 = self._ask_adaptive_range_percentage(hours_3h)
-        results["range_percentage_adaptive"] = result2
-        
-        # Pregunta 3: Mínimos adaptativos
-        print("\n📊 PREGUNTA 3: Mínimos adaptativos")
-        result3 = self._ask_adaptive_low_time_minimums(hours_3h)
-        results["low_minimums_adaptive"] = result3
-        
-        # Pregunta 4: Máximos adaptativos
-        print("\n📊 PREGUNTA 4: Máximos adaptativos")
-        result4 = self._ask_adaptive_high_time_maximums(hours_3h)
-        results["high_maximums_adaptive"] = result4
-        
-        # Pregunta 5: Panorama 48h adaptativo
-        print("\n📊 PREGUNTA 5: Panorama 48h adaptativo")
-        result5 = self._ask_adaptive_48h_panorama()
-        results["panorama_48h_adaptive"] = result5
-        
-        # Pregunta 6: Análisis semanal adaptativo
-        print("\n📊 PREGUNTA 6: Análisis semanal adaptativo")
-        result6 = self._ask_adaptive_weekly_analysis()
-        results["weekly_adaptive"] = result6
-        
-        return results
-    
-    def _create_integrated_analysis(self, adaptive_results: Dict, ml_results: Dict) -> Dict[str, Any]:
-        """Crear análisis integrado combinando adaptativo + ML"""
-        
-        if "error" in ml_results:
-            return {
-                "timestamp": pd.Timestamp.now().isoformat(),
-                "status": "error_ml",
-                "adaptive_results": adaptive_results,
-                "ml_error": ml_results["error"]
-            }
-        
-        features = ml_results.get("features")
-        signal = ml_results.get("signal")
-        ml_data = ml_results.get("ml_data")
-        
-        # Crear resumen ejecutivo
-        executive_summary = self._create_executive_summary(features, signal, adaptive_results)
-        
-        # Crear recomendaciones de trading
-        trading_recommendations = self._create_trading_recommendations(signal, features)
-        
-        # Análisis de confianza
-        confidence_analysis = self._analyze_confidence_factors(signal, features)
-        
-        return {
-            "timestamp": pd.Timestamp.now().isoformat(),
-            "status": "success",
-            "symbol": self.symbol,
-            "user": "biGGzeta",
+        try:
+            # Pregunta 1: Máximos y mínimos básicos
+            print(f"\n📊 PREGUNTA 1: Máximos y mínimos básicos")
+            simple_answer1, detailed_data1 = self.ask_max_min_last_hours(3)
+            results['max_min_basic'] = (simple_answer1, detailed_data1)
             
-            # Resultados principales
-            "executive_summary": executive_summary,
-            "trading_signal": {
-                "type": signal.signal_type.value,
-                "confidence": signal.confidence,
-                "price_target": signal.price_target,
-                "stop_loss": signal.stop_loss,
-                "expected_move_pct": signal.expected_move_pct,
-                "risk_reward_ratio": signal.risk_reward_ratio,
-                "timeframe": signal.timeframe
-            },
-            "trading_recommendations": trading_recommendations,
-            "confidence_analysis": confidence_analysis,
+            # Pregunta 2: Análisis de porcentajes
+            print(f"\n📊 PREGUNTA 2: Análisis de porcentajes")
+            simple_answer2, detailed_data2 = self.ask_range_percentage(3)
+            results['percentage_adaptive'] = (simple_answer2, detailed_data2)
             
-            # Datos detallados
-            "market_features": {
-                "regime": features.regime,
-                "volatility": features.volatility,
-                "trend_strength": features.trend_strength,
-                "price_position_pct": features.price_position_pct,
-                "momentum_3d": features.momentum_3d,
-                "extremes_alignment": features.extremes_alignment,
-                "maximos_trend": features.maximos_trend,
-                "minimos_trend": features.minimos_trend,
-                "maximos_strength": features.maximos_strength,
-                "minimos_strength": features.minimos_strength,
-                "trend_momentum_alignment": features.trend_momentum_alignment
-            },
-            "decision_reasoning": signal.reasoning,
+            # Pregunta 3: Mínimos adaptativos
+            print(f"\n📊 PREGUNTA 3: Mínimos adaptativos")
+            simple_answer3, detailed_data3 = self.ask_low_time_minimums(3, 15)
+            results['low_minimums_adaptive'] = (simple_answer3, detailed_data3)
             
-            # Datos completos para análisis
-            "adaptive_results": adaptive_results,
-            "ml_results": ml_results,
+            # Pregunta 4: Máximos adaptativos
+            print(f"\n📊 PREGUNTA 4: Máximos adaptativos")
+            simple_answer4, detailed_data4 = self.ask_high_time_maximums(3, 15)
+            results['high_maximums_adaptive'] = (simple_answer4, detailed_data4)
             
-            # Metadatos
-            "pipeline_version": "1.0",
-            "analysis_quality": ml_results.get("quality_metrics", {})
-        }
-    
-    def _debug_decision_tree_path(self, features: MarketFeatures):
-        """Debug manual del path del árbol de decisiones"""
-        
-        if not features:
-            print("❌ No hay features para debug")
-            return
-        
-        print("\n🔍 DEBUG DETALLADO DEL ÁRBOL DE DECISIONES:")
-        print("=" * 60)
-        
-        # Nodo 1: Régimen
-        is_volatile = features.regime in ["high_volatility", "trending"]
-        print(f"1️⃣ Régimen volátil/trending: {is_volatile}")
-        print(f"   📊 Régimen actual: {features.regime}")
-        
-        if not is_volatile:  # Va por rama calma
-            print("   ➡️ Tomando rama: CALMA/RANGING")
+            # Pregunta 5: Panorama 48h
+            print(f"\n📊 PREGUNTA 5: Panorama 48h")
+            simple_answer5, detailed_data5 = self.ask_48h_panorama()
+            results['panorama_48h_adaptive'] = (simple_answer5, detailed_data5)
             
-            # Nodo 2: Estructura extremos
-            both_growing = features.maximos_trend == "crecientes" and features.minimos_trend == "crecientes"
-            print(f"\n2️⃣ Ambos extremos crecientes: {both_growing}")
-            print(f"   📈 Máximos: {features.maximos_trend}")
-            print(f"   📉 Mínimos: {features.minimos_trend}")
+            # Pregunta 6: Análisis semanal
+            print(f"\n📊 PREGUNTA 6: Análisis semanal")
+            simple_answer6, detailed_data6 = self.ask_weekly_analysis()
+            results['weekly_adaptive'] = (simple_answer6, detailed_data6)
             
-            if both_growing:  # Va por rama alcista
-                print("   ➡️ Tomando rama: ESTRUCTURA ALCISTA")
-                
-                # Nodo 3: Estructura fuerte
-                strong_structure = features.maximos_strength > 60 and features.minimos_strength > 60
-                print(f"\n3️⃣ Estructura fuerte (>60): {strong_structure}")
-                print(f"   💪 Fuerza máximos: {features.maximos_strength:.1f}")
-                print(f"   💪 Fuerza mínimos: {features.minimos_strength:.1f}")
-                
-                if strong_structure:
-                    print("   ➡️ Estructura FUERTE detectada")
-                    
-                    # Nodo 4: Momentum alignment
-                    momentum_ok = features.momentum_3d > 1 and features.trend_momentum_alignment > 0.5
-                    print(f"\n4️⃣ Momentum + alignment OK: {momentum_ok}")
-                    print(f"   ⚡ Momentum 3d: {features.momentum_3d:.2f}%")
-                    print(f"   🎯 Trend-momentum alignment: {features.trend_momentum_alignment:.3f}")
-                    print(f"   ✅ Momentum > 1: {features.momentum_3d > 1}")
-                    print(f"   ✅ Alignment > 0.5: {features.trend_momentum_alignment > 0.5}")
-                    
-                    if momentum_ok:
-                        print("   ➡️ Momentum y alignment VÁLIDOS")
-                        
-                        # Nodo 5: Momentum súper fuerte
-                        super_momentum = features.momentum_3d > 7
-                        print(f"\n5️⃣ Momentum súper fuerte (>7): {super_momentum}")
-                        
-                        if super_momentum:
-                            print("   ➡️ MOMENTUM SÚPER FUERTE detectado")
-                            
-                            # Nodo 6: Posición final
-                            position_ok = features.price_position_pct < 90
-                            print(f"\n6️⃣ Posición OK (<90): {position_ok}")
-                            print(f"   📍 Posición actual: {features.price_position_pct:.1f}%")
-                            
-                            if position_ok:
-                                print("   🎯 RESULTADO ESPERADO: BULLISH_SUPER_MOMENTUM (90% confianza)")
-                            else:
-                                print("   ⚠️ RESULTADO ESPERADO: BULLISH_MOMENTUM_TOP (75% confianza)")
-                        else:
-                            print("   ➡️ Momentum fuerte pero no súper fuerte")
-                            # Verificar siguiente nivel
-                            strong_momentum = features.momentum_3d > 5
-                            print(f"\n5️⃣.1 Momentum fuerte (>5): {strong_momentum}")
-                            
-                            if strong_momentum:
-                                position_strong = features.price_position_pct < 85
-                                print(f"6️⃣.1 Posición OK (<85): {position_strong}")
-                                print(f"   📍 Posición: {features.price_position_pct:.1f}%")
-                                
-                                if position_strong:
-                                    print("   🎯 RESULTADO ESPERADO: BULLISH_STRONG_MOMENTUM (85% confianza)")
-                                else:
-                                    print("   ⚠️ RESULTADO ESPERADO: BULLISH_MOMENTUM_HIGH (70% confianza)")
-                    else:
-                        print("   ❌ Momentum o alignment insuficientes")
-                        print("   🎯 RESULTADO ESPERADO: BULLISH_STRUCTURE_WEAK_MOMENTUM (65% confianza)")
-                else:
-                    print("   ❌ Estructura débil")
-                    print("   🎯 RESULTADO ESPERADO: BULLISH_STRUCTURE_WAIT o similar")
-            else:
-                print("   ❌ Extremos no alineados crecientes")
-        else:
-            print("   ➡️ Tomando rama: VOLATIL/TRENDING")
-        
-        print("=" * 60)
+            return results
+            
+        except Exception as e:
+            print(f"❌ Error en análisis adaptativo: {str(e)}")
+            return {}
     
-    def _create_executive_summary(self, features: MarketFeatures, signal: TradingSignal, adaptive_results: Dict) -> str:
-        """Crear resumen ejecutivo para traders"""
-        
-        # Extraer datos clave del análisis adaptativo
-        weekly_result = adaptive_results.get("weekly_adaptive", ("", {}))
-        if isinstance(weekly_result, tuple) and len(weekly_result) > 1:
-            weekly_simple = weekly_result[0]
-        else:
-            weekly_simple = "Análisis semanal no disponible"
-        
-        summary_parts = []
-        
-        # 1. Situación del mercado
-        summary_parts.append(f"📊 SITUACIÓN: {features.regime.upper()} (vol {features.volatility:.1f}%)")
-        
-        # 2. Posición en rango
-        if features.price_position_pct > 80:
-            position_desc = "ZONA ALTA"
-        elif features.price_position_pct < 20:
-            position_desc = "ZONA BAJA"
-        else:
-            position_desc = "ZONA MEDIA"
-        summary_parts.append(f"📍 POSICIÓN: {position_desc} ({features.price_position_pct:.0f}% del rango semanal)")
-        
-        # 3. Estructura de mercado
-        if features.extremes_alignment:
-            structure = f"Estructura {features.maximos_trend.upper()}"
-        else:
-            structure = f"Divergencia: máx {features.maximos_trend} vs mín {features.minimos_trend}"
-        summary_parts.append(f"🏗️ ESTRUCTURA: {structure}")
-        
-        # 4. Momentum
-        if features.momentum_3d > 2:
-            momentum_desc = f"ALCISTA FUERTE (+{features.momentum_3d:.1f}%)"
-        elif features.momentum_3d > 0.5:
-            momentum_desc = f"ALCISTA (+{features.momentum_3d:.1f}%)"
-        elif features.momentum_3d < -2:
-            momentum_desc = f"BAJISTA FUERTE ({features.momentum_3d:.1f}%)"
-        elif features.momentum_3d < -0.5:
-            momentum_desc = f"BAJISTA ({features.momentum_3d:.1f}%)"
-        else:
-            momentum_desc = f"NEUTRAL ({features.momentum_3d:.1f}%)"
-        summary_parts.append(f"⚡ MOMENTUM 3D: {momentum_desc}")
-        
-        # 5. Señal principal
-        summary_parts.append(f"🎯 SEÑAL: {signal.signal_type.value} (confianza {signal.confidence:.0f}%)")
-        
-        return " | ".join(summary_parts)
-    
-    def _create_trading_recommendations(self, signal: TradingSignal, features: MarketFeatures) -> Dict[str, Any]:
-        """Crear recomendaciones específicas de trading"""
-        
-        recommendations = {
-            "primary_action": signal.signal_type.value,
-            "confidence_level": self._get_confidence_level(signal.confidence),
-            "position_sizing": self._suggest_position_sizing(signal, features),
-            "entry_strategy": self._suggest_entry_strategy(signal, features),
-            "risk_management": self._suggest_risk_management(signal, features),
-            "time_horizon": signal.timeframe,
-            "market_context": self._get_market_context(features)
-        }
-        
-        return recommendations
-    
-    def _analyze_confidence_factors(self, signal: TradingSignal, features: MarketFeatures) -> Dict[str, Any]:
-        """Analizar factores que afectan la confianza de la señal"""
-        
-        factors = {
-            "positive_factors": [],
-            "negative_factors": [],
-            "neutral_factors": [],
-            "overall_confidence": signal.confidence
-        }
-        
-        # Factores positivos
-        if features.extremes_alignment:
-            factors["positive_factors"].append("Extremos alineados (estructura clara)")
-        
-        if signal.risk_reward_ratio and signal.risk_reward_ratio > 2:
-            factors["positive_factors"].append(f"Excelente R:R ({signal.risk_reward_ratio:.1f}:1)")
-        
-        if features.trend_strength > 0.7:
-            factors["positive_factors"].append("Tendencia fuerte y definida")
-        
-        if abs(features.momentum_3d) > 5:
-            factors["positive_factors"].append(f"Momentum fuerte ({features.momentum_3d:.1f}%)")
-        
-        # Factores negativos
-        if features.volatility > 5:
-            factors["negative_factors"].append("Alta volatilidad puede generar ruido")
-        
-        if features.price_position_pct > 90 and signal.signal_type in [SignalType.BUY, SignalType.STRONG_BUY]:
-            factors["negative_factors"].append("Precio muy cerca del máximo semanal")
-        
-        if features.price_position_pct < 10 and signal.signal_type in [SignalType.SELL, SignalType.STRONG_SELL]:
-            factors["negative_factors"].append("Precio muy cerca del mínimo semanal")
-        
-        if features.trend_momentum_alignment < 0.5:
-            factors["negative_factors"].append("Desalineación entre trend y momentum")
-        
-        # Factores neutrales
-        if features.regime == "smooth_ranging":
-            factors["neutral_factors"].append("Mercado lateral - movimientos limitados")
-        
-        if features.maximos_strength < 60 or features.minimos_strength < 60:
-            factors["neutral_factors"].append("Estructura de extremos débil")
-        
-        return factors
-    
-    def _get_confidence_level(self, confidence: float) -> str:
-        """Convertir confianza numérica a descripción"""
-        if confidence >= 80:
-            return "MUY ALTA"
-        elif confidence >= 70:
-            return "ALTA"
-        elif confidence >= 60:
-            return "MEDIA"
-        elif confidence >= 50:
-            return "BAJA"
-        else:
-            return "MUY BAJA"
-    
-    def _suggest_position_sizing(self, signal: TradingSignal, features: MarketFeatures) -> str:
-        """Sugerir tamaño de posición basado en confianza y volatilidad"""
-        
-        base_size = 100  # Tamaño base
-        
-        # Ajustar por confianza
-        if signal.confidence >= 80:
-            confidence_factor = 1.0
-        elif signal.confidence >= 70:
-            confidence_factor = 0.8
-        elif signal.confidence >= 60:
-            confidence_factor = 0.6
-        else:
-            confidence_factor = 0.4
-        
-        # Ajustar por volatilidad
-        if features.volatility > 5:
-            volatility_factor = 0.7
-        elif features.volatility > 3:
-            volatility_factor = 0.8
-        else:
-            volatility_factor = 1.0
-        
-        suggested_size = base_size * confidence_factor * volatility_factor
-        
-        return f"{suggested_size:.0f}% del tamaño normal de posición"
-    
-    def _suggest_entry_strategy(self, signal: TradingSignal, features: MarketFeatures) -> str:
-        """Sugerir estrategia de entrada"""
-        
-        if signal.confidence >= 80:
-            return "Entrada inmediata - señal muy fuerte"
-        elif signal.confidence >= 70:
-            return "Entrada en 2 partes: 60% inmediato, 40% en retroceso"
-        elif signal.confidence >= 60:
-            return "Esperar retroceso para mejor entrada"
-        else:
-            return "Esperar confirmación adicional antes de entrar"
-    
-    def _suggest_risk_management(self, signal: TradingSignal, features: MarketFeatures) -> Dict[str, str]:
-        """Sugerir gestión de riesgo"""
-        
-        risk_management = {}
-        
-        if signal.stop_loss:
-            risk_management["stop_loss"] = f"${signal.stop_loss:.2f}"
-        
-        if signal.price_target:
-            risk_management["take_profit"] = f"${signal.price_target:.2f}"
-        
-        if features.volatility > 5:
-            risk_management["trailing_stop"] = "Recomendado debido a alta volatilidad"
-        
-        risk_management["position_review"] = "Revisar en 3-6 horas"
-        
-        return risk_management
-    
-    def _get_market_context(self, features: MarketFeatures) -> str:
-        """Obtener contexto del mercado"""
-        
-        contexts = []
-        
-        if features.regime == "high_volatility":
-            contexts.append("mercado volátil")
-        elif features.regime == "trending":
-            contexts.append("mercado en tendencia")
-        else:
-            contexts.append("mercado lateral")
-        
-        if features.price_position_pct > 80:
-            contexts.append("cerca de resistencia semanal")
-        elif features.price_position_pct < 20:
-            contexts.append("cerca de soporte semanal")
-        
-        return ", ".join(contexts)
-    
-    # Métodos existentes (copiados del main_adaptive.py)
-    def _ask_max_min_last_hours(self, hours: float) -> Tuple[str, Dict[str, Any]]:
-        """Pregunta 1: Máximos y mínimos básicos"""
+    # MÉTODOS COPIADOS DE TU main.py ORIGINAL
+    def ask_max_min_last_hours(self, hours: float):
+        """Pregunta 1: ¿Cuáles son los máximos y mínimos de las últimas X horas?"""
         question = f"¿Cuáles son los máximos y mínimos de las últimas {hours} horas?"
         
         print(f"🔄 Descargando datos de {self.symbol} (1m) para las últimas {hours} horas...")
         
+        # Descargar datos en timeframe 1m
         data = self.downloader.get_klines("1m", hours)
         
         if data.empty:
             simple_answer = "Sin datos disponibles"
-            self.logger.log_qa(question, simple_answer)
+            if self.enable_logging:
+                self.logger.log_qa(question, simple_answer)
             return simple_answer, {}
         
-        self.analysis_cache["data_3h"] = data.copy()
+        # Guardar datos para reutilizar
+        self.last_data = data.copy()
         
-        self.original_max_min_analyzer.load_data(data)
-        simple_answer, detailed_data = self.original_max_min_analyzer.analyze_max_min_last_hours(hours)
+        # Cargar datos y analizar
+        self.max_min_analyzer.load_data(data)
+        simple_answer, detailed_data = self.max_min_analyzer.analyze_max_min_last_hours(hours)
         
-        self.logger.log_qa(question, simple_answer, detailed_data)
-        
-        if isinstance(detailed_data, dict):
-            print(f"✅ Respuesta 1: {simple_answer}")
-            print(f"📈 Volatilidad: {detailed_data.get('percentage_range', 0):.2f}%")
+        # Registrar en logs duales
+        if self.enable_logging:
+            self.logger.log_qa(question, simple_answer, detailed_data)
         
         return simple_answer, detailed_data
     
-    def _ask_adaptive_range_percentage(self, hours: float) -> Tuple[str, Dict[str, Any]]:
-        """Pregunta 2: Análisis de porcentajes con parámetros adaptativos"""
-        question = f"¿Cuál es el análisis adaptativo de porcentajes de las últimas {hours} horas?"
+    def ask_range_percentage(self, hours: float):
+        """Pregunta 2: ¿De cuánto porcentaje fue el rango?"""
+        question = f"¿De cuánto porcentaje fue el rango de las últimas {hours} horas?"
         
-        if "data_3h" in self.analysis_cache:
-            print(f"🔄 Reutilizando datos existentes para análisis adaptativo...")
-            data = self.analysis_cache["data_3h"]
+        # Reutilizar datos si ya los tenemos
+        if self.last_data is not None and not self.last_data.empty:
+            print(f"🔄 Reutilizando datos existentes para análisis de porcentaje...")
+            data = self.last_data
         else:
-            print(f"🔄 Descargando datos de {self.symbol} para análisis adaptativo...")
+            print(f"🔄 Descargando datos de {self.symbol} (1m) para análisis de porcentaje...")
             data = self.downloader.get_klines("1m", hours)
         
         if data.empty:
             simple_answer = "Sin datos disponibles"
-            self.logger.log_qa(question, simple_answer)
+            if self.enable_logging:
+                self.logger.log_qa(question, simple_answer)
             return simple_answer, {}
         
-        self.adaptive_percentage_analyzer.load_data(data)
-        simple_answer, detailed_data = self.adaptive_percentage_analyzer.analyze_range_percentage_adaptive(hours)
+        # Cargar datos y analizar
+        self.percentage_analyzer.load_data(data)
+        simple_answer, detailed_data = self.percentage_analyzer.analyze_range_percentage(hours)
         
-        self.logger.log_qa(question, simple_answer, detailed_data)
-        print(f"✅ Respuesta 2: {simple_answer}")
+        # Registrar en logs duales
+        if self.enable_logging:
+            self.logger.log_qa(question, simple_answer, detailed_data)
         
         return simple_answer, detailed_data
     
-    def _ask_adaptive_low_time_minimums(self, hours: float) -> Tuple[str, Dict[str, Any]]:
-        """Pregunta 3: Mínimos adaptativos"""
-        question = f"¿Cuáles son los mínimos adaptativos de las últimas {hours} horas?"
+    def ask_low_time_minimums(self, hours: float, max_time_minutes: int = 15):
+        """Pregunta 3: ¿Cuáles fueron los mínimos más bajos en los que el precio estuvo poco tiempo?"""
+        question = f"¿Cuáles fueron los mínimos más bajos en los que el precio estuvo poco tiempo (≤{max_time_minutes}min)?"
         
-        if "data_3h" in self.analysis_cache:
-            print(f"🔄 Reutilizando datos para análisis adaptativo de mínimos...")
-            data = self.analysis_cache["data_3h"]
+        # Reutilizar datos si ya los tenemos
+        if self.last_data is not None and not self.last_data.empty:
+            print(f"🔄 Reutilizando datos existentes para análisis de mínimos rápidos...")
+            data = self.last_data
         else:
+            print(f"🔄 Descargando datos de {self.symbol} (1m) para análisis de mínimos...")
             data = self.downloader.get_klines("1m", hours)
         
         if data.empty:
             simple_answer = "Sin datos disponibles"
-            self.logger.log_qa(question, simple_answer)
+            if self.enable_logging:
+                self.logger.log_qa(question, simple_answer)
             return simple_answer, {}
         
-        self.adaptive_low_analyzer.load_data(data)
-        simple_answer, detailed_data = self.adaptive_low_analyzer.analyze_low_time_minimums_adaptive(hours)
+        # Cargar datos y analizar
+        self.low_time_analyzer.load_data(data)
+        simple_answer, detailed_data = self.low_time_analyzer.analyze_low_time_minimums(hours, max_time_minutes)
         
-        self.logger.log_qa(question, simple_answer, detailed_data)
-        print(f"✅ Respuesta 3: {simple_answer}")
+        # Registrar en logs duales
+        if self.enable_logging:
+            self.logger.log_qa(question, simple_answer, detailed_data)
         
         return simple_answer, detailed_data
     
-    def _ask_adaptive_high_time_maximums(self, hours: float) -> Tuple[str, Dict[str, Any]]:
-        """Pregunta 4: Máximos adaptativos"""
-        question = f"¿Cuáles son los máximos adaptativos de las últimas {hours} horas?"
+    def ask_high_time_maximums(self, hours: float, max_time_minutes: int = 15):
+        """Pregunta 4: ¿Cuáles fueron los máximos más altos en los que el precio estuvo poco tiempo?"""
+        question = f"¿Cuáles fueron los máximos más altos en los que el precio estuvo poco tiempo (≤{max_time_minutes}min)?"
         
-        if "data_3h" in self.analysis_cache:
-            print(f"🔄 Reutilizando datos para análisis adaptativo de máximos...")
-            data = self.analysis_cache["data_3h"]
+        # Reutilizar datos si ya los tenemos
+        if self.last_data is not None and not self.last_data.empty:
+            print(f"🔄 Reutilizando datos existentes para análisis de máximos rápidos...")
+            data = self.last_data
         else:
+            print(f"🔄 Descargando datos de {self.symbol} (1m) para análisis de máximos...")
             data = self.downloader.get_klines("1m", hours)
         
         if data.empty:
             simple_answer = "Sin datos disponibles"
-            self.logger.log_qa(question, simple_answer)
+            if self.enable_logging:
+                self.logger.log_qa(question, simple_answer)
             return simple_answer, {}
         
-        self.adaptive_high_analyzer.load_data(data)
-        simple_answer, detailed_data = self.adaptive_high_analyzer.analyze_high_time_maximums_adaptive(hours)
+        # Cargar datos y analizar
+        self.high_time_analyzer.load_data(data)
+        simple_answer, detailed_data = self.high_time_analyzer.analyze_high_time_maximums(hours, max_time_minutes)
         
-        self.logger.log_qa(question, simple_answer, detailed_data)
-        print(f"✅ Respuesta 4: {simple_answer}")
+        # Registrar en logs duales
+        if self.enable_logging:
+            self.logger.log_qa(question, simple_answer, detailed_data)
         
         return simple_answer, detailed_data
     
-    def _ask_adaptive_48h_panorama(self) -> Tuple[str, Dict[str, Any]]:
-        """Pregunta 5: Panorama 48h adaptativo"""
-        question = "¿Cuál es el panorama adaptativo de las últimas 48 horas?"
+    def ask_48h_panorama(self):
+        """Pregunta 5: Panorama de las últimas 48 horas"""
+        question = "¿Cuál es el panorama de las últimas 48 horas?"
         
-        print(f"🔄 Descargando datos de {self.symbol} para panorama adaptativo 48h...")
+        print(f"🔄 Descargando datos de {self.symbol} (1m) para panorama de 48 horas...")
         
+        # Descargar datos de 48 horas
         data = self.downloader.get_klines("1m", 48)
         
         if data.empty:
             simple_answer = "Sin datos disponibles para 48h"
-            self.logger.log_qa(question, simple_answer)
+            if self.enable_logging:
+                self.logger.log_qa(question, simple_answer)
             return simple_answer, {}
         
-        self.analysis_cache["data_48h"] = data.copy()
+        # Guardar datos de 48h para reutilizar
+        self.last_48h_data = data.copy()
         
-        self.adaptive_panorama_analyzer.load_data(data)
-        simple_answer, detailed_data = self.adaptive_panorama_analyzer.analyze_48h_panorama_adaptive(48)
+        # Cargar datos y analizar
+        self.panorama_analyzer.load_data(data)
+        simple_answer, detailed_data = self.panorama_analyzer.analyze_48h_panorama(48)
         
-        self.logger.log_qa(question, simple_answer, detailed_data)
-        print(f"✅ Respuesta 5: {simple_answer}")
+        # Registrar en logs duales
+        if self.enable_logging:
+            self.logger.log_qa(question, simple_answer, detailed_data)
         
         return simple_answer, detailed_data
     
-    def _ask_adaptive_weekly_analysis(self) -> Tuple[str, Dict[str, Any]]:
-        """Pregunta 6: Análisis semanal adaptativo"""
-        question = "¿Cuál es el análisis semanal adaptativo completo?"
+    def ask_weekly_analysis(self):
+        """Pregunta 6: Análisis semanal completo con tendencia de extremos recientes"""
+        question = "¿Cuál es el análisis semanal completo con tendencia de extremos recientes?"
         
-        print(f"🔄 Descargando datos de {self.symbol} para análisis semanal adaptativo...")
+        print(f"🔄 Descargando datos de {self.symbol} (1m) para análisis semanal...")
         
+        # Descargar datos de 1 semana (168 horas)
         data = self.downloader.get_klines("1m", 168)
         
         if data.empty:
             simple_answer = "Sin datos disponibles para análisis semanal"
-            self.logger.log_qa(question, simple_answer)
+            if self.enable_logging:
+                self.logger.log_qa(question, simple_answer)
             return simple_answer, {}
         
-        self.analysis_cache["data_weekly"] = data.copy()
+        # Guardar datos semanales para reutilizar
+        self.last_weekly_data = data.copy()
         
-        self.adaptive_weekly_analyzer.load_data(data)
-        simple_answer, detailed_data = self.adaptive_weekly_analyzer.analyze_weekly_with_recent_extremes_adaptive(3)
+        # Cargar datos y analizar
+        self.weekly_analyzer.load_data(data)
+        simple_answer, detailed_data = self.weekly_analyzer.analyze_weekly_with_recent_extremes(3)  # 3 días
         
-        self.logger.log_qa(question, simple_answer, detailed_data)
-        print(f"✅ Respuesta 6: {simple_answer}")
-        
-        if isinstance(detailed_data, dict):
-            maximos_trend = detailed_data.get('maximos_trend', {})
-            minimos_trend = detailed_data.get('minimos_trend', {})
-            print(f"🎯 Máximos 3d: {maximos_trend.get('trend', 'unknown')}")
-            print(f"🎯 Mínimos 3d: {minimos_trend.get('trend', 'unknown')}")
+        # Registrar en logs duales
+        if self.enable_logging:
+            self.logger.log_qa(question, simple_answer, detailed_data)
         
         return simple_answer, detailed_data
+    
+    def _create_integrated_analysis(self, adaptive_results: Dict, ml_results: Dict) -> Dict[str, Any]:
+        """Crear análisis integrado combinando todos los componentes"""
+        
+        integrated = {
+            "analysis_timestamp": datetime.utcnow().isoformat(),
+            "components_analyzed": []
+        }
+        
+        # Análisis adaptativo
+        if adaptive_results:
+            integrated["adaptive_summary"] = self._summarize_adaptive_results(adaptive_results)
+            integrated["components_analyzed"].append("adaptive_analysis")
+        
+        # Análisis ML
+        if ml_results:
+            integrated["ml_summary"] = self._summarize_ml_results(ml_results)
+            integrated["components_analyzed"].append("ml_analysis")
+        
+        return integrated
+    
+    def _summarize_adaptive_results(self, adaptive_results: Dict) -> Dict[str, Any]:
+        """Resumir resultados del análisis adaptativo"""
+        
+        summary = {
+            "questions_completed": len(adaptive_results),
+            "analysis_timeframes": ["3h", "3h", "3h", "3h", "48h", "1w"],
+            "key_findings": []
+        }
+        
+        # Extraer hallazgos clave
+        for question, result in adaptive_results.items():
+            if isinstance(result, tuple) and len(result) >= 2:
+                simple_answer, detailed_data = result
+                if isinstance(detailed_data, dict):
+                    summary["key_findings"].append({
+                        "question": question,
+                        "finding": simple_answer,
+                        "confidence": detailed_data.get("confidence", "medium")
+                    })
+        
+        return summary
+    
+    def _summarize_ml_results(self, ml_results: Dict) -> Dict[str, Any]:
+        """Resumir resultados del análisis ML"""
+        
+        if not ml_results or 'signal' not in ml_results:
+            return {"status": "no_ml_signal"}
+        
+        signal = ml_results['signal']
+        
+        return {
+            "signal_type": signal.signal_type.value,
+            "confidence": signal.confidence,
+            "expected_move": signal.expected_move_pct,
+            "risk_reward_ratio": signal.risk_reward_ratio,
+            "features_used_count": len(signal.features_used.__dict__) if signal.features_used else 0,
+            "decision_path": ml_results.get("decision_path", []),
+            "quality_metrics": ml_results.get("quality_metrics", {})
+        }
+    
+    def _generate_executive_summary(self, adaptive_results: Dict, ml_results: Dict) -> str:
+        """Generar resumen ejecutivo del análisis"""
+        
+        # Obtener información clave
+        ml_signal = ml_results.get('signal') if ml_results else None
+        features = ml_results.get('features') if ml_results else None
+        
+        # Construir resumen
+        summary_parts = []
+        
+        # Situación del mercado
+        if features:
+            regime = features.regime.upper()
+            volatility = features.volatility
+            position_pct = features.price_position_pct
+            momentum_3d = features.momentum_3d
+            
+            # Determinar zona
+            if position_pct > 75:
+                zone = "ZONA ALTA"
+            elif position_pct < 25:
+                zone = "ZONA BAJA"
+            else:
+                zone = "ZONA MEDIA"
+            
+            # Determinar estructura
+            extremes_alignment = getattr(features, 'extremes_alignment', False)
+            if extremes_alignment:
+                structure = "ALINEADOS"
+            else:
+                structure = "DECRECIENTES"  # Basado en análisis semanal típico
+            
+            # Determinar momentum
+            if abs(momentum_3d) < 1:
+                momentum_status = "NEUTRAL"
+            elif momentum_3d > 1:
+                momentum_status = "ALCISTA"
+            else:
+                momentum_status = "BAJISTA"
+            
+            summary_parts.append(f"📊 SITUACIÓN: {regime} (vol {volatility:.1f}%)")
+            summary_parts.append(f"📍 POSICIÓN: {zone} ({position_pct:.0f}% del rango semanal)")
+            summary_parts.append(f"🏗️ ESTRUCTURA: {structure}")
+            summary_parts.append(f"⚡ MOMENTUM 3D: {momentum_status} ({momentum_3d:.1f}%)")
+        
+        # Señal ML
+        if ml_signal:
+            signal_type = ml_signal.signal_type.value
+            confidence = ml_signal.confidence
+            summary_parts.append(f"🎯 SEÑAL: {signal_type} (confianza {confidence:.0f}%)")
+        
+        return " | ".join(summary_parts)
+    
+    def _extract_trading_signal(self, ml_results: Dict) -> Dict[str, Any]:
+        """Extraer señal de trading del análisis ML"""
+        
+        if not ml_results or 'signal' not in ml_results:
+            return {
+                "type": "UNKNOWN",
+                "confidence": 0,
+                "message": "Sin señal ML disponible"
+            }
+        
+        signal = ml_results['signal']
+        
+        return {
+            "type": signal.signal_type.value,
+            "confidence": signal.confidence,
+            "price_target": signal.price_target,
+            "stop_loss": signal.stop_loss,
+            "expected_move_pct": signal.expected_move_pct,
+            "risk_reward_ratio": signal.risk_reward_ratio,
+            "timeframe": signal.timeframe,
+            "reasoning": signal.reasoning[:3] if signal.reasoning else []  # Top 3 razones
+        }
+    
+    def _generate_trading_recommendations(self, ml_results: Dict) -> Dict[str, Any]:
+        """Generar recomendaciones de trading"""
+        
+        if not ml_results or 'signal' not in ml_results:
+            return {
+                "primary_action": "MONITOR",
+                "confidence_level": "LOW",
+                "position_sizing": "No recomendado",
+                "entry_strategy": "Esperar señal clara"
+            }
+        
+        signal = ml_results['signal']
+        confidence = signal.confidence
+        
+        # Determinar acción primaria
+        signal_type = signal.signal_type.value
+        if signal_type in ["BUY", "STRONG_BUY"]:
+            primary_action = "BUY"
+        elif signal_type in ["SELL", "STRONG_SELL"]:
+            primary_action = "SELL"
+        else:
+            primary_action = "MONITOR"
+        
+        # Determinar nivel de confianza
+        if confidence >= 80:
+            confidence_level = "MUY ALTA"
+            position_sizing = "100% del tamaño normal de posición"
+        elif confidence >= 70:
+            confidence_level = "ALTA"
+            position_sizing = "80% del tamaño normal de posición"
+        elif confidence >= 60:
+            confidence_level = "MEDIA"
+            position_sizing = "60% del tamaño normal de posición"
+        else:
+            confidence_level = "BAJA"
+            position_sizing = "40% del tamaño normal de posición"
+        
+        # Estrategia de entrada
+        if primary_action == "BUY":
+            if confidence >= 75:
+                entry_strategy = "Entrada inmediata con confirmación"
+            else:
+                entry_strategy = "Entrada en 2 partes: 60% inmediato, 40% en retroceso"
+        elif primary_action == "SELL":
+            if confidence >= 75:
+                entry_strategy = "Entrada inmediata en fortaleza"
+            else:
+                entry_strategy = "Entrada en 2 partes: 60% inmediato, 40% en retroceso"
+        else:
+            entry_strategy = "Esperar mayor claridad del mercado"
+        
+        return {
+            "primary_action": primary_action,
+            "confidence_level": confidence_level,
+            "position_sizing": position_sizing,
+            "entry_strategy": entry_strategy,
+            "risk_management": f"Stop loss: ${signal.stop_loss:.2f}" if signal.stop_loss else "Definir stop según volatilidad"
+        }
+    
+    def _analyze_confidence_factors(self, adaptive_results: Dict, ml_results: Dict) -> Dict[str, Any]:
+        """Analizar factores que afectan la confianza"""
+        
+        factors = {
+            "positive_factors": [],
+            "negative_factors": [],
+            "neutral_factors": []
+        }
+        
+        # Factores del análisis ML
+        if ml_results and 'signal' in ml_results:
+            signal = ml_results['signal']
+            features = ml_results.get('features')
+            
+            if features:
+                # Factores positivos
+                if signal.risk_reward_ratio and signal.risk_reward_ratio >= 2:
+                    factors["positive_factors"].append(f"Excelente R:R ({signal.risk_reward_ratio:.1f}:1)")
+                
+                if getattr(features, 'extremes_alignment', False):
+                    factors["positive_factors"].append("Extremos alineados (estructura clara)")
+                
+                if getattr(features, 'trend_strength', 0) > 0.8:
+                    factors["positive_factors"].append("Tendencia fuerte y definida")
+                
+                if abs(getattr(features, 'momentum_3d', 0)) > 5:
+                    factors["positive_factors"].append(f"Momentum fuerte ({features.momentum_3d:.1f}%)")
+                
+                # Factores negativos
+                if getattr(features, 'volatility', 0) > 5:
+                    factors["negative_factors"].append("Alta volatilidad puede generar ruido")
+                
+                position_pct = getattr(features, 'price_position_pct', 50)
+                if position_pct > 90 and signal.signal_type.value in ["BUY", "STRONG_BUY"]:
+                    factors["negative_factors"].append("Precio muy cerca del máximo semanal")
+                
+                if position_pct < 10 and signal.signal_type.value in ["SELL", "STRONG_SELL"]:
+                    factors["negative_factors"].append("Precio muy cerca del mínimo semanal")
+                
+                # Detectar desalineación entre trend y momentum
+                trend_strength = getattr(features, 'trend_strength', 0)
+                momentum_3d = getattr(features, 'momentum_3d', 0)
+                if trend_strength > 0.7 and abs(momentum_3d) < 2:
+                    factors["negative_factors"].append("Desalineación entre trend y momentum")
+        
+        # Factores del análisis adaptativo
+        total_questions = len(adaptive_results)
+        if total_questions >= 6:
+            factors["positive_factors"].append(f"Análisis completo de {total_questions} dimensiones")
+        
+        return factors
+    
+    def _debug_decision_tree(self, ml_results: Dict):
+        """Debug detallado del árbol de decisiones"""
+        
+        if not ml_results or 'decision_path' not in ml_results:
+            print("⚠️ No hay información de decision path disponible")
+            return
+        
+        print(f"\n🔍 DEBUG DETALLADO DEL ÁRBOL DE DECISIONES:")
+        print("=" * 60)
+        
+        decision_path = ml_results.get('decision_path', [])
+        features = ml_results.get('features')
+        signal = ml_results.get('signal')
+        
+        # Mostrar features clave
+        if features:
+            print(f"📊 Features de entrada:")
+            print(f"   Régimen: {getattr(features, 'regime', 'unknown')}")
+            print(f"   Volatilidad: {getattr(features, 'volatility', 0):.2f}%")
+            print(f"   Momentum 3d: {getattr(features, 'momentum_3d', 0):.1f}%")
+            print(f"   Posición: {getattr(features, 'price_position_pct', 0):.1f}%")
+            print(f"   Extremos alineados: {getattr(features, 'extremes_alignment', False)}")
+        
+        # Mostrar path de decisiones
+        if decision_path:
+            print(f"\n🌳 Camino de decisiones:")
+            for i, decision in enumerate(decision_path, 1):
+                print(f"{i}️⃣ {decision}")
+        
+        # Mostrar resultado final
+        if signal:
+            print(f"\n🎯 Resultado final:")
+            print(f"   Señal: {signal.signal_type.value}")
+            print(f"   Confianza: {signal.confidence}%")
+            if hasattr(signal, 'reasoning'):
+                print(f"   Reasoning: {signal.reasoning}")
+        
+        print("=" * 60)
 
 def test_complete_system_with_logging():
-    """Probar el sistema completo con logging y debug detallado"""
+    """Probar el sistema completo con logging, debug detallado + Interpretación Probabilística"""
     
     print(f"🚀 Iniciando test completo del sistema - Usuario: biGGzeta")
-    print(f"🕐 Fecha actual: 2025-10-04 04:47:48 UTC")
+    print(f"🕐 Fecha actual: 2025-10-04 22:56:45 UTC")
     
     # Inicializar sistema completo con logging
     system = AdaptiveTradingMLSystem("ETHUSD_PERP", enable_ml=True, enable_logging=True)
@@ -699,22 +683,60 @@ def test_complete_system_with_logging():
             for factor in confidence['negative_factors'][:3]:  # Top 3
                 print(f"      • {factor}")
         
-        # Mostrar archivos generados
-        if 'analysis_report_file' in results:
-            print(f"\n📝 ARCHIVOS GENERADOS:")
-            print(f"   📊 Reporte completo: {results['analysis_report_file']}")
-            print(f"   📈 Dashboard data: {results.get('dashboard_data_file', 'N/A')}")
+        # **NUEVA SECCIÓN: INTERPRETACIÓN PROBABILÍSTICA**
+        print("\n" + "=" * 75)
+        print("🧠 INICIANDO INTERPRETACIÓN PROBABILÍSTICA:")
+        print("=" * 75)
         
-        # Generar reporte final de sesión
-        if hasattr(system, 'market_logger') and system.market_logger:
-            session_report = system.market_logger.generate_session_report()
-            print(f"   📋 Reporte de sesión: {session_report}")
+        try:
+            from analysis.probabilistic_interpreter import ProbabilisticInterpreter
+            
+            interpreter = ProbabilisticInterpreter("ETHUSD_PERP")
+            probability_results = interpreter.interpret_complete_analysis(results)
+            
+            # Mostrar escenarios probabilísticos
+            print(f"\n🎯 ESCENARIOS PROBABILÍSTICOS GENERADOS:")
+            print("=" * 60)
+            
+            for i, scenario in enumerate(probability_results["scenarios"], 1):
+                print(f"\n📊 ESCENARIO {i}: {scenario['name']}")
+                print(f"   🎯 Probabilidad: {scenario['probability']}%")
+                print(f"   📈 Target: {scenario['target_range']}")
+                print(f"   ⏰ Timeframe: {scenario['timeframe']}")
+                if scenario.get('risk_reward'):
+                    print(f"   📊 R:R: {scenario['risk_reward']}")
+                if scenario.get('reasoning'):
+                    print(f"   💡 Reasoning:")
+                    for reason in scenario['reasoning'][:3]:
+                        print(f"      • {reason}")
+            
+            # Mostrar recomendación final
+            external_signal = probability_results["signal_for_external"]
+            print(f"\n🚨 RECOMENDACIÓN PROBABILÍSTICA FINAL:")
+            print(f"   🎯 Acción: {external_signal['action']}")
+            print(f"   📊 Confianza: {external_signal['confidence']}%")
+            print(f"   🎪 Escenario principal: {external_signal['primary_scenario']}")
+            print(f"   📍 Target: {external_signal['target_range']}")
+            
+            # Mostrar archivo de señal externa generado
+            print(f"\n📁 ARCHIVOS DE SEÑALES GENERADOS:")
+            print(f"   🚨 Señal externa: logs/probabilities/signal_external_{system.symbol}.json")
+            print(f"   📊 Análisis completo: logs/probabilities/interpretation_{system.symbol}_*.json")
+            
+        except ImportError:
+            print("⚠️ Módulo de interpretación probabilística no encontrado")
+            print("   Asegúrate de que analysis/probabilistic_interpreter.py esté en el directorio correcto")
+            print("   Ejecuta: mkdir -p analysis && # coloca el archivo ahí")
+        except Exception as e:
+            print(f"❌ Error en interpretación probabilística: {str(e)}")
+            print(f"   Detalles: {type(e).__name__}")
     
     elif results.get("status") == "error_ml":
         print("\n❌ Error en pipeline ML:")
         print(f"   {results['ml_error']}")
     
-    print(f"\n✅ Test completado - {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    print(f"\n✅ Test completado - {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC")
+    print(f"👤 Usuario: biGGzeta")
     return results
 
 if __name__ == "__main__":

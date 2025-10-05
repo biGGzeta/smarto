@@ -645,6 +645,59 @@ class AdaptiveTradingMLSystemEnhanced:
                 "timestamp": datetime.now().isoformat()
             }
     
+    def _run_adaptive_analysis(self, hours_3h: float, hours_48h: float) -> Dict[str, Any]:
+        """Ejecutar análisis adaptativo completo"""
+        
+        adaptive_results = {}
+        
+        try:
+            # Descargar datos
+            print(f"📥 Descargando datos de {hours_3h}h y {hours_48h}h...")
+            data_3h = self.downloader.get_klines("1m", hours_3h)
+            data_48h = self.downloader.get_klines("1m", hours_48h)
+            
+            # Guardar en cache
+            self.analysis_cache["data_3h"] = data_3h
+            self.analysis_cache["data_48h"] = data_48h
+            
+            if data_3h.empty or data_48h.empty:
+                return {"error": "No se pudieron obtener datos"}
+            
+            # Análisis adaptativo de extremos de poco tiempo (3h)
+            self.adaptive_low_analyzer.load_data(data_3h)
+            low_time_result = self.adaptive_low_analyzer.analyze_adaptive_low_time_minimums(hours_3h)
+            adaptive_results['low_time_analysis'] = low_time_result
+            
+            # Análisis adaptativo de máximos de poco tiempo (3h)
+            self.adaptive_high_analyzer.load_data(data_3h)
+            high_time_result = self.adaptive_high_analyzer.analyze_adaptive_high_time_maximums(hours_3h)
+            adaptive_results['high_time_analysis'] = high_time_result
+            
+            # Análisis adaptativo de porcentajes (3h)
+            self.adaptive_percentage_analyzer.load_data(data_3h)
+            percentage_result = self.adaptive_percentage_analyzer.analyze_adaptive_range_percentage(hours_3h)
+            adaptive_results['percentage_analysis'] = percentage_result
+            
+            # Análisis panorama adaptativo (48h)
+            self.adaptive_panorama_analyzer.load_data(data_48h)
+            panorama_result = self.adaptive_panorama_analyzer.analyze_adaptive_48h_panorama(hours_48h)
+            adaptive_results['panorama_analysis'] = panorama_result
+            
+            # Análisis semanal adaptativo (168h)
+            data_weekly = self.downloader.get_klines("1m", 168)
+            if not data_weekly.empty:
+                self.adaptive_weekly_analyzer.load_data(data_weekly)
+                weekly_result = self.adaptive_weekly_analyzer.analyze_adaptive_weekly_with_recent_extremes(3)
+                adaptive_results['weekly_analysis'] = weekly_result
+                self.analysis_cache["data_weekly"] = data_weekly
+            
+            print(f"✅ Análisis adaptativo completado")
+            return adaptive_results
+            
+        except Exception as e:
+            print(f"❌ Error en análisis adaptativo: {e}")
+            return {"error": str(e)}
+    
     def _run_triangle_analysis(self) -> Dict[str, Any]:
         """Ejecutar análisis de triángulos (NUEVO)"""
         
@@ -1177,6 +1230,8 @@ class AdaptiveTradingMLSystemEnhanced:
             risk_mgmt["take_profit"] = "Take profit conservador en +3%"
         
         # Revisión de posición
+    
+                # Revisión de posición
         if vol_summary.get('is_expanding', False):
             risk_mgmt["position_review"] = "Revisar cada 1-2 horas por expansión de volatilidad"
         else:
@@ -1192,7 +1247,7 @@ class AdaptiveTradingMLSystemEnhanced:
         if triangle_summary.get('total_triangles', 0) > 0:
             breakout_prob = triangle_summary.get('max_breakout_prob', 0)
             if breakout_prob > 80:
-                return "1-6 horas (breakout inminent)"
+                return "1-6 horas (breakout inminente)"
             elif breakout_prob > 60:
                 return "6-12 horas (breakout probable)"
             else:
@@ -1233,4 +1288,93 @@ class AdaptiveTradingMLSystemEnhanced:
         vol_summary = volatility_results.get('summary', {})
         if vol_summary.get('is_expanding', False):
             contexts.append("volatilidad en expansión")
-        elif vol_summary.get('trend')
+        elif vol_summary.get('trend') == 'contracting':
+            contexts.append("volatilidad en contracción")
+        
+        return ", ".join(contexts) if contexts else "mercado sin características especiales"
+
+
+# =============================================================================
+# FUNCIÓN PRINCIPAL DE EJECUCIÓN
+# =============================================================================
+
+def test_enhanced_system():
+    """Prueba completa del sistema enhanced"""
+    print("🚀 Iniciando sistema ENHANCED completo")
+    print("=" * 100)
+    
+    # Inicializar sistema enhanced
+    system = AdaptiveTradingMLSystemEnhanced(
+        symbol="ETHUSD_PERP", 
+        enable_ml=True,
+        enable_logging=True,
+        enable_triangles=True,
+        enable_live_volatility=True
+    )
+    
+    # Ejecutar análisis completo enhanced
+    try:
+        results = system.run_complete_enhanced_analysis(hours_3h=3, hours_48h=48)
+        
+        if results.get("status") == "success_enhanced":
+            print("\n" + "=" * 100)
+            print("🎯 RESUMEN EJECUTIVO ENHANCED:")
+            print("=" * 100)
+            print(f"📊 {results['executive_summary']}")
+            
+            print("\n🎯 SEÑAL ENHANCED:")
+            enhanced_signal = results.get('enhanced_trading_signal', {})
+            signal_type = enhanced_signal.get('signal_type', 'UNKNOWN')
+            confidence = enhanced_signal.get('confidence', 0)
+            
+            if signal_type == "STRONG_BUY":
+                print(f"🚀 {signal_type} - Confianza: {confidence:.0f}%")
+            elif signal_type == "BUY":
+                print(f"📈 {signal_type} - Confianza: {confidence:.0f}%")
+            else:
+                print(f"⏸️ {signal_type} - Confianza: {confidence:.0f}%")
+            
+            # Mostrar reasoning
+            reasoning = enhanced_signal.get('reasoning', [])
+            if reasoning:
+                print("\n🧠 RAZONAMIENTO:")
+                for i, reason in enumerate(reasoning, 1):
+                    print(f"  {i}. {reason}")
+            
+            print("\n📋 RECOMENDACIONES:")
+            recommendations = results.get('trading_recommendations', {})
+            print(f"  🎯 Acción: {recommendations.get('primary_action', 'N/A')}")
+            print(f"  📊 Confianza: {recommendations.get('confidence_level', 'N/A')}")
+            print(f"  💰 Tamaño: {recommendations.get('position_sizing', 'N/A')}")
+            print(f"  🚀 Entrada: {recommendations.get('entry_strategy', 'N/A')}")
+            print(f"  ⏰ Horizonte: {recommendations.get('time_horizon', 'N/A')}")
+            
+            # Análisis enhanced específico
+            triangle_analysis = results.get('triangle_analysis', {})
+            triangle_summary = triangle_analysis.get('summary', {})
+            if triangle_summary.get('total_triangles', 0) > 0:
+                print(f"\n🔺 TRIÁNGULOS DETECTADOS: {triangle_summary['total_triangles']}")
+                print(f"  📊 Máxima confianza: {triangle_summary.get('max_confidence', 0):.1f}%")
+                print(f"  ⚡ Máx probabilidad breakout: {triangle_summary.get('max_breakout_prob', 0):.1f}%")
+            
+            volatility_analysis = results.get('volatility_analysis', {})
+            vol_summary = volatility_analysis.get('summary', {})
+            print(f"\n⚡ VOLATILIDAD LIVE:")
+            print(f"  📊 Actual: {vol_summary.get('current_volatility', 0):.2f}%")
+            print(f"  📈 Tendencia: {vol_summary.get('trend', 'unknown')}")
+            print(f"  💥 Expandiendo: {'SÍ' if vol_summary.get('is_expanding', False) else 'NO'}")
+            
+            print("\n" + "=" * 100)
+            print("✅ SISTEMA ENHANCED COMPLETADO EXITOSAMENTE")
+            print("=" * 100)
+            
+        else:
+            print("❌ Error en el sistema enhanced:")
+            print(results.get('error', 'Error desconocido'))
+            
+    except Exception as e:
+        print(f"❌ Error ejecutando sistema enhanced: {e}")
+
+
+if __name__ == "__main__":
+    test_enhanced_system()
