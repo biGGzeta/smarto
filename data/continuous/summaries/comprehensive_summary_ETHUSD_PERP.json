@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-10-05T15:14:02.402141+00:00",
+  "symbol": "ETHUSD_PERP",
+  "period_analyzed": "last_3_hours",
+  "data_statistics": {
+    "price_current": 4535.71,
+    "price_high_3h": 4535.71,
+    "price_low_3h": 4533.24,
+    "price_change_3h_pct": 0.054486415896803496,
+    "volume_avg_3h": 187191386.36363637,
+    "spread_avg": 0.91,
+    "data_points_3h": 22
+  },
+  "classification_statistics": {},
+  "system_statistics": {
+    "data_source": "binance_coinm",
+    "total_points_captured": 22,
+    "websocket_errors": 0,
+    "classification_errors": 0,
+    "save_errors": 0,
+    "connection_resets": 0,
+    "api_calls": 0
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2025-10-05T14:42:18.014345+00:00",
+    "trend_1m": "bearish",
+    "trend_5m": "bearish",
+    "trend_15m": "bearish",
+    "volatility_1m": 0.1083,
+    "volatility_5m": 0.109,
+    "volatility_15m": 0.109,
+    "volume_trend": "stable",
+    "market_phase": "trending",
+    "momentum_1m": -0.126,
+    "momentum_5m": -0.1253,
+    "support_level": null,
+    "resistance_level": null
+  },
+  {
+    "timestamp": "2025-10-05T14:43:18.111825+00:00",
+    "trend_1m": "lateral",
+    "trend_5m": "bearish",
+    "trend_15m": "bearish",
+    "volatility_1m": 0.1497,
+    "volatility_5m": 0.2227,
+    "volatility_15m": 0.2227,
+    "volume_trend": "stable",
+    "market_phase": "trending",
+    "momentum_1m": 0.0771,
+    "momentum_5m": -0.1693,
+    "support_level": 4539.75,
+    "resistance_level": 4547.85
+  },
+  {
+    "timestamp": "2025-10-05T14:44:18.141703+00:00",
+    "trend_1m": "bearish",
+    "trend_5m": "bearish",
+    "trend_15m": "bearish",
+    "volatility_1m": 0.2463,
+    "volatility_5m": 0.3535,
+    "volatility_15m": 0.3535,
+    "volume_trend": "stable",
+    "market_phase": "trending",
+    "momentum_1m": -0.1987,
+    "momentum_5m": -0.4967,
+    "support_level": 4527.11,
+    "resistance_level": 4547.19
+  },
+  {
+    "timestamp": "2025-10-05T14:45:18.139429+00:00",
+    "trend_1m": "bearish",
+    "trend_5m": "bearish",
+    "trend_15m": "bearish",
+    "volatility_1m": 0.1899,
+    "volatility_5m": 0.4123,
+    "volatility_15m": 0.4123,
+    "volume_trend": "stable",
+    "market_phase": "trending",
+    "momentum_1m": -0.1674,
+    "momentum_5m": -0.582,
+    "support_level": 4519.15,
+    "resistance_level": 4546.67
+  }
+]

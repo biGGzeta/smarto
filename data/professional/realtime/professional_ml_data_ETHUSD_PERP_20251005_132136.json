@@ -1,0 +1,3554 @@
+[
+  {
+    "timestamp": "2025-10-05T16:18:42.240807+00:00",
+    "price": 4533.23,
+    "open_price": 4450.36,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172910088.0,
+    "weighted_avg_price": 4546.67353965,
+    "price_change_24h": 82.87,
+    "price_change_pct_24h": 1.862,
+    "volume_change_pct": 0,
+    "trade_count": 552513,
+    "best_bid": 4533.23,
+    "best_ask": 4533.24,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 4917.0,
+    "ask_quantity": 29656.0,
+    "orderbook_imbalance": -0.7594041956451705,
+    "bids_depth": [
+      [
+        4533.23,
+        4917.0
+      ],
+      [
+        4533.22,
+        1426.0
+      ],
+      [
+        4533.2,
+        3.0
+      ],
+      [
+        4533.1,
+        1.0
+      ],
+      [
+        4533.09,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.24,
+        29656.0
+      ],
+      [
+        4533.32,
+        5774.0
+      ],
+      [
+        4533.35,
+        291.0
+      ],
+      [
+        4533.41,
+        10500.0
+      ],
+      [
+        4533.46,
+        200.0
+      ]
+    ],
+    "total_bid_volume": 6348.0,
+    "total_ask_volume": 46421.0,
+    "depth_ratio": 0.13674845436332694,
+    "whale_bids": 6343.0,
+    "whale_asks": 46421.0,
+    "whale_activity_score": 0.9999052473990411,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:18:44.538796+00:00",
+    "price": 4533.23,
+    "open_price": 4450.36,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172910255.0,
+    "weighted_avg_price": 4546.67352663,
+    "price_change_24h": 82.87,
+    "price_change_pct_24h": 1.862,
+    "volume_change_pct": 0,
+    "trade_count": 552515,
+    "best_bid": 4533.22,
+    "best_ask": 4533.23,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 3260.0,
+    "ask_quantity": 51378.0,
+    "orderbook_imbalance": -0.9025176474099721,
+    "bids_depth": [
+      [
+        4533.22,
+        3260.0
+      ],
+      [
+        4533.2,
+        3.0
+      ],
+      [
+        4533.1,
+        1.0
+      ],
+      [
+        4533.09,
+        1.0
+      ],
+      [
+        4533.05,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.23,
+        51378.0
+      ],
+      [
+        4533.24,
+        1333.0
+      ],
+      [
+        4533.32,
+        5642.0
+      ],
+      [
+        4533.35,
+        871.0
+      ],
+      [
+        4533.4,
+        4517.0
+      ]
+    ],
+    "total_bid_volume": 3266.0,
+    "total_ask_volume": 63741.0,
+    "depth_ratio": 0.05123860623460567,
+    "whale_bids": 3260.0,
+    "whale_asks": 63741.0,
+    "whale_activity_score": 0.9999104571164207,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:18:49.179024+00:00",
+    "price": 4533.22,
+    "open_price": 4450.36,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172911681.0,
+    "weighted_avg_price": 4546.67341535,
+    "price_change_24h": 82.86,
+    "price_change_pct_24h": 1.862,
+    "volume_change_pct": 0,
+    "trade_count": 552516,
+    "best_bid": 4533.22,
+    "best_ask": 4533.23,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 6260.0,
+    "ask_quantity": 45746.0,
+    "orderbook_imbalance": -0.7666205093896349,
+    "bids_depth": [
+      [
+        4533.22,
+        6260.0
+      ],
+      [
+        4533.2,
+        3.0
+      ],
+      [
+        4533.1,
+        1.0
+      ],
+      [
+        4533.09,
+        1.0
+      ],
+      [
+        4533.05,
+        1235.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.23,
+        45746.0
+      ],
+      [
+        4533.24,
+        824.0
+      ],
+      [
+        4533.32,
+        5395.0
+      ],
+      [
+        4533.35,
+        291.0
+      ],
+      [
+        4533.4,
+        4517.0
+      ]
+    ],
+    "total_bid_volume": 7500.0,
+    "total_ask_volume": 56773.0,
+    "depth_ratio": 0.13210504993570887,
+    "whale_bids": 7495.0,
+    "whale_asks": 56773.0,
+    "whale_activity_score": 0.9999222068364632,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:18:51.817787+00:00",
+    "price": 4533.2,
+    "open_price": 4450.36,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172916536.0,
+    "weighted_avg_price": 4546.67303649,
+    "price_change_24h": 82.84,
+    "price_change_pct_24h": 1.861,
+    "volume_change_pct": 0,
+    "trade_count": 552529,
+    "best_bid": 4533.2,
+    "best_ask": 4533.21,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 1388.0,
+    "ask_quantity": 48736.0,
+    "orderbook_imbalance": -0.9146315285414706,
+    "bids_depth": [
+      [
+        4533.2,
+        1388.0
+      ],
+      [
+        4533.1,
+        1.0
+      ],
+      [
+        4533.09,
+        1.0
+      ],
+      [
+        4533.05,
+        1095.0
+      ],
+      [
+        4533.0,
+        100.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.21,
+        48736.0
+      ],
+      [
+        4533.22,
+        6502.0
+      ],
+      [
+        4533.23,
+        1714.0
+      ],
+      [
+        4533.24,
+        824.0
+      ],
+      [
+        4533.26,
+        200.0
+      ]
+    ],
+    "total_bid_volume": 2585.0,
+    "total_ask_volume": 57976.0,
+    "depth_ratio": 0.04458741548226852,
+    "whale_bids": 2583.0,
+    "whale_asks": 57976.0,
+    "whale_activity_score": 0.9999669754462442,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:18:54.495299+00:00",
+    "price": 4532.71,
+    "open_price": 4450.36,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172918137.0,
+    "weighted_avg_price": 4546.67291109,
+    "price_change_24h": 82.35,
+    "price_change_pct_24h": 1.85,
+    "volume_change_pct": 0,
+    "trade_count": 552543,
+    "best_bid": 4532.71,
+    "best_ask": 4532.72,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 6109.0,
+    "ask_quantity": 19236.0,
+    "orderbook_imbalance": -0.6643594689662998,
+    "bids_depth": [
+      [
+        4532.71,
+        6109.0
+      ],
+      [
+        4532.58,
+        1.0
+      ],
+      [
+        4532.57,
+        1.0
+      ],
+      [
+        4532.55,
+        1273.0
+      ],
+      [
+        4532.54,
+        11.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4532.72,
+        19236.0
+      ],
+      [
+        4532.76,
+        11048.0
+      ],
+      [
+        4532.8,
+        1867.0
+      ],
+      [
+        4532.88,
+        2.0
+      ],
+      [
+        4532.93,
+        4517.0
+      ]
+    ],
+    "total_bid_volume": 7395.0,
+    "total_ask_volume": 36670.0,
+    "depth_ratio": 0.20166348513771476,
+    "whale_bids": 7382.0,
+    "whale_asks": 36668.0,
+    "whale_activity_score": 0.999659593781913,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:18:59.735726+00:00",
+    "price": 4532.72,
+    "open_price": 4450.36,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172918150.0,
+    "weighted_avg_price": 4546.67291004,
+    "price_change_24h": 82.36,
+    "price_change_pct_24h": 1.851,
+    "volume_change_pct": 0,
+    "trade_count": 552544,
+    "best_bid": 4532.71,
+    "best_ask": 4532.72,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 11949.0,
+    "ask_quantity": 1691.0,
+    "orderbook_imbalance": 0.39702529584192814,
+    "bids_depth": [
+      [
+        4532.71,
+        11949.0
+      ],
+      [
+        4532.7,
+        240.0
+      ],
+      [
+        4532.68,
+        400.0
+      ],
+      [
+        4532.66,
+        39.0
+      ],
+      [
+        4532.6,
+        240.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4532.72,
+        1691.0
+      ],
+      [
+        4532.86,
+        1100.0
+      ],
+      [
+        4532.87,
+        1100.0
+      ],
+      [
+        4532.88,
+        1175.0
+      ],
+      [
+        4532.95,
+        488.0
+      ]
+    ],
+    "total_bid_volume": 12868.0,
+    "total_ask_volume": 5554.0,
+    "depth_ratio": 2.3168887288440763,
+    "whale_bids": 12868.0,
+    "whale_asks": 5554.0,
+    "whale_activity_score": 1.0,
+    "large_orders_count": 10,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:01.732178+00:00",
+    "price": 4532.71,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172797157.0,
+    "weighted_avg_price": 4546.7427605,
+    "price_change_24h": 83.59,
+    "price_change_pct_24h": 1.879,
+    "volume_change_pct": 0,
+    "trade_count": 551445,
+    "best_bid": 4532.71,
+    "best_ask": 4532.72,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 2106.0,
+    "ask_quantity": 14805.0,
+    "orderbook_imbalance": -0.8282281883649155,
+    "bids_depth": [
+      [
+        4532.71,
+        2106.0
+      ],
+      [
+        4532.7,
+        240.0
+      ],
+      [
+        4532.6,
+        240.0
+      ],
+      [
+        4532.58,
+        1.0
+      ],
+      [
+        4532.57,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4532.72,
+        14805.0
+      ],
+      [
+        4532.85,
+        10190.0
+      ],
+      [
+        4532.86,
+        1100.0
+      ],
+      [
+        4532.88,
+        1175.0
+      ],
+      [
+        4532.89,
+        275.0
+      ]
+    ],
+    "total_bid_volume": 2588.0,
+    "total_ask_volume": 27545.0,
+    "depth_ratio": 0.09395534579778544,
+    "whale_bids": 2586.0,
+    "whale_asks": 27545.0,
+    "whale_activity_score": 0.999933627584376,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:04.142291+00:00",
+    "price": 4532.42,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172797416.0,
+    "weighted_avg_price": 4546.74273923,
+    "price_change_24h": 83.3,
+    "price_change_pct_24h": 1.872,
+    "volume_change_pct": 0,
+    "trade_count": 551454,
+    "best_bid": 4532.41,
+    "best_ask": 4532.42,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 5007.0,
+    "ask_quantity": 41901.0,
+    "orderbook_imbalance": -0.8216708364499239,
+    "bids_depth": [
+      [
+        4532.41,
+        5007.0
+      ],
+      [
+        4532.32,
+        1.0
+      ],
+      [
+        4532.31,
+        1.0
+      ],
+      [
+        4532.23,
+        438.0
+      ],
+      [
+        4532.22,
+        1467.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4532.42,
+        41901.0
+      ],
+      [
+        4532.45,
+        8157.0
+      ],
+      [
+        4532.51,
+        10500.0
+      ],
+      [
+        4532.53,
+        270.0
+      ],
+      [
+        4532.57,
+        9800.0
+      ]
+    ],
+    "total_bid_volume": 6914.0,
+    "total_ask_volume": 70628.0,
+    "depth_ratio": 0.09789318683808121,
+    "whale_bids": 6912.0,
+    "whale_asks": 70628.0,
+    "whale_activity_score": 0.9999742075262439,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:07.578150+00:00",
+    "price": 4532.42,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172798798.0,
+    "weighted_avg_price": 4546.74262432,
+    "price_change_24h": 83.3,
+    "price_change_pct_24h": 1.872,
+    "volume_change_pct": 0,
+    "trade_count": 551455,
+    "best_bid": 4532.41,
+    "best_ask": 4532.42,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 8189.0,
+    "ask_quantity": 32530.0,
+    "orderbook_imbalance": -0.588739092759406,
+    "bids_depth": [
+      [
+        4532.41,
+        8189.0
+      ],
+      [
+        4532.32,
+        1.0
+      ],
+      [
+        4532.31,
+        1.0
+      ],
+      [
+        4532.28,
+        821.0
+      ],
+      [
+        4532.25,
+        1192.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4532.42,
+        32530.0
+      ],
+      [
+        4532.44,
+        100.0
+      ],
+      [
+        4532.53,
+        270.0
+      ],
+      [
+        4532.61,
+        5880.0
+      ],
+      [
+        4532.65,
+        639.0
+      ]
+    ],
+    "total_bid_volume": 10204.0,
+    "total_ask_volume": 39419.0,
+    "depth_ratio": 0.2588599406377635,
+    "whale_bids": 10202.0,
+    "whale_asks": 39419.0,
+    "whale_activity_score": 0.9999596961086593,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:09.661324+00:00",
+    "price": 4533.36,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172800549.0,
+    "weighted_avg_price": 4546.7424788,
+    "price_change_24h": 84.24,
+    "price_change_pct_24h": 1.893,
+    "volume_change_pct": 0,
+    "trade_count": 551478,
+    "best_bid": 4533.48,
+    "best_ask": 4533.49,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 19983.0,
+    "ask_quantity": 13911.0,
+    "orderbook_imbalance": 0.26940170061910756,
+    "bids_depth": [
+      [
+        4533.48,
+        19983.0
+      ],
+      [
+        4533.33,
+        1173.0
+      ],
+      [
+        4533.32,
+        912.0
+      ],
+      [
+        4533.31,
+        1246.0
+      ],
+      [
+        4533.3,
+        1393.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.49,
+        13911.0
+      ],
+      [
+        4533.54,
+        1.0
+      ],
+      [
+        4533.55,
+        1.0
+      ],
+      [
+        4533.58,
+        306.0
+      ],
+      [
+        4533.62,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 24707.0,
+    "total_ask_volume": 14220.0,
+    "depth_ratio": 1.7374824191279887,
+    "whale_bids": 24707.0,
+    "whale_asks": 14217.0,
+    "whale_activity_score": 0.9999229326688417,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:14.128906+00:00",
+    "price": 4533.49,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172800550.0,
+    "weighted_avg_price": 4546.74247873,
+    "price_change_24h": 84.37,
+    "price_change_pct_24h": 1.896,
+    "volume_change_pct": 0,
+    "trade_count": 551479,
+    "best_bid": 4533.48,
+    "best_ask": 4533.49,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 21284.0,
+    "ask_quantity": 6239.0,
+    "orderbook_imbalance": 0.6046329356439955,
+    "bids_depth": [
+      [
+        4533.48,
+        21284.0
+      ],
+      [
+        4533.46,
+        1511.0
+      ],
+      [
+        4533.45,
+        4517.0
+      ],
+      [
+        4533.4,
+        318.0
+      ],
+      [
+        4533.34,
+        9.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.49,
+        6239.0
+      ],
+      [
+        4533.54,
+        1.0
+      ],
+      [
+        4533.55,
+        1.0
+      ],
+      [
+        4533.62,
+        1.0
+      ],
+      [
+        4533.64,
+        568.0
+      ]
+    ],
+    "total_bid_volume": 27639.0,
+    "total_ask_volume": 6810.0,
+    "depth_ratio": 4.058590308370044,
+    "whale_bids": 27630.0,
+    "whale_asks": 6807.0,
+    "whale_activity_score": 0.9996516589741357,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:16.151561+00:00",
+    "price": 4534.01,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172801202.0,
+    "weighted_avg_price": 4546.74243054,
+    "price_change_24h": 84.89,
+    "price_change_pct_24h": 1.908,
+    "volume_change_pct": 0,
+    "trade_count": 551493,
+    "best_bid": 4534.0,
+    "best_ask": 4534.01,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 29197.0,
+    "ask_quantity": 4030.0,
+    "orderbook_imbalance": 0.7733183914935758,
+    "bids_depth": [
+      [
+        4534.0,
+        29197.0
+      ],
+      [
+        4533.98,
+        2434.0
+      ],
+      [
+        4533.97,
+        1685.0
+      ],
+      [
+        4533.91,
+        200.0
+      ],
+      [
+        4533.87,
+        506.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.01,
+        4030.0
+      ],
+      [
+        4534.14,
+        1.0
+      ],
+      [
+        4534.15,
+        1.0
+      ],
+      [
+        4534.16,
+        316.0
+      ],
+      [
+        4534.18,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 34022.0,
+    "total_ask_volume": 4349.0,
+    "depth_ratio": 7.822947804092895,
+    "whale_bids": 34022.0,
+    "whale_asks": 4346.0,
+    "whale_activity_score": 0.9999218159547575,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:18.764322+00:00",
+    "price": 4534.2,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172842728.0,
+    "weighted_avg_price": 4546.73944554,
+    "price_change_24h": 85.08,
+    "price_change_pct_24h": 1.912,
+    "volume_change_pct": 0,
+    "trade_count": 551541,
+    "best_bid": 4534.19,
+    "best_ask": 4534.2,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 24821.0,
+    "ask_quantity": 5423.0,
+    "orderbook_imbalance": 0.5220765781303898,
+    "bids_depth": [
+      [
+        4534.19,
+        24821.0
+      ],
+      [
+        4534.15,
+        517.0
+      ],
+      [
+        4534.14,
+        100.0
+      ],
+      [
+        4534.08,
+        39.0
+      ],
+      [
+        4534.06,
+        998.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.2,
+        5423.0
+      ],
+      [
+        4534.21,
+        766.0
+      ],
+      [
+        4534.42,
+        1617.0
+      ],
+      [
+        4534.43,
+        506.0
+      ],
+      [
+        4534.53,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 26475.0,
+    "total_ask_volume": 8313.0,
+    "depth_ratio": 3.184770840851678,
+    "whale_bids": 26475.0,
+    "whale_asks": 8312.0,
+    "whale_activity_score": 0.9999712544555593,
+    "large_orders_count": 9,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:21.320994+00:00",
+    "price": 4535.0,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172864826.0,
+    "weighted_avg_price": 4546.73792694,
+    "price_change_24h": 85.88,
+    "price_change_pct_24h": 1.93,
+    "volume_change_pct": 0,
+    "trade_count": 551630,
+    "best_bid": 4534.91,
+    "best_ask": 4534.92,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 5486.0,
+    "ask_quantity": 23828.0,
+    "orderbook_imbalance": -0.5733663016601908,
+    "bids_depth": [
+      [
+        4534.91,
+        5486.0
+      ],
+      [
+        4534.85,
+        4524.0
+      ],
+      [
+        4534.81,
+        278.0
+      ],
+      [
+        4534.75,
+        1189.0
+      ],
+      [
+        4534.66,
+        601.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.92,
+        23828.0
+      ],
+      [
+        4534.97,
+        7960.0
+      ],
+      [
+        4534.98,
+        10500.0
+      ],
+      [
+        4535.1,
+        20.0
+      ],
+      [
+        4535.11,
+        2234.0
+      ]
+    ],
+    "total_bid_volume": 12078.0,
+    "total_ask_volume": 44542.0,
+    "depth_ratio": 0.27115980422971575,
+    "whale_bids": 12078.0,
+    "whale_asks": 44522.0,
+    "whale_activity_score": 0.9996467679265277,
+    "large_orders_count": 9,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:26.264356+00:00",
+    "price": 4534.91,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172864830.0,
+    "weighted_avg_price": 4546.73792666,
+    "price_change_24h": 85.79,
+    "price_change_pct_24h": 1.928,
+    "volume_change_pct": 0,
+    "trade_count": 551631,
+    "best_bid": 4534.91,
+    "best_ask": 4534.92,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 537.0,
+    "ask_quantity": 38639.0,
+    "orderbook_imbalance": -0.9098613628570029,
+    "bids_depth": [
+      [
+        4534.91,
+        537.0
+      ],
+      [
+        4534.9,
+        2220.0
+      ],
+      [
+        4534.85,
+        1.0
+      ],
+      [
+        4534.84,
+        1.0
+      ],
+      [
+        4534.66,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.92,
+        38639.0
+      ],
+      [
+        4534.96,
+        1329.0
+      ],
+      [
+        4534.97,
+        7960.0
+      ],
+      [
+        4534.98,
+        10500.0
+      ],
+      [
+        4535.06,
+        51.0
+      ]
+    ],
+    "total_bid_volume": 2760.0,
+    "total_ask_volume": 58479.0,
+    "depth_ratio": 0.04719642948750834,
+    "whale_bids": 2757.0,
+    "whale_asks": 58479.0,
+    "whale_activity_score": 0.9999510116102484,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:28.645339+00:00",
+    "price": 4534.63,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172867908.0,
+    "weighted_avg_price": 4546.73771515,
+    "price_change_24h": 85.51,
+    "price_change_pct_24h": 1.922,
+    "volume_change_pct": 0,
+    "trade_count": 551648,
+    "best_bid": 4534.6,
+    "best_ask": 4534.61,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 3557.0,
+    "ask_quantity": 59208.0,
+    "orderbook_imbalance": -0.8409648996099957,
+    "bids_depth": [
+      [
+        4534.6,
+        3557.0
+      ],
+      [
+        4534.59,
+        616.0
+      ],
+      [
+        4534.53,
+        1.0
+      ],
+      [
+        4534.52,
+        1.0
+      ],
+      [
+        4534.41,
+        1330.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.61,
+        59208.0
+      ],
+      [
+        4534.75,
+        299.0
+      ],
+      [
+        4534.78,
+        1347.0
+      ],
+      [
+        4534.84,
+        134.0
+      ],
+      [
+        4534.85,
+        2737.0
+      ]
+    ],
+    "total_bid_volume": 5505.0,
+    "total_ask_volume": 63725.0,
+    "depth_ratio": 0.08638681836014123,
+    "whale_bids": 5503.0,
+    "whale_asks": 63725.0,
+    "whale_activity_score": 0.9999711107901199,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:31.004208+00:00",
+    "price": 4534.27,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172869441.0,
+    "weighted_avg_price": 4546.73760697,
+    "price_change_24h": 85.15,
+    "price_change_pct_24h": 1.914,
+    "volume_change_pct": 0,
+    "trade_count": 551669,
+    "best_bid": 4534.27,
+    "best_ask": 4534.28,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 4726.0,
+    "ask_quantity": 42931.0,
+    "orderbook_imbalance": -0.830820322937741,
+    "bids_depth": [
+      [
+        4534.27,
+        4726.0
+      ],
+      [
+        4534.21,
+        1.0
+      ],
+      [
+        4534.2,
+        1.0
+      ],
+      [
+        4534.14,
+        1.0
+      ],
+      [
+        4534.01,
+        1919.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.28,
+        42931.0
+      ],
+      [
+        4534.5,
+        292.0
+      ],
+      [
+        4534.52,
+        25226.0
+      ],
+      [
+        4534.53,
+        2232.0
+      ],
+      [
+        4534.54,
+        1262.0
+      ]
+    ],
+    "total_bid_volume": 6648.0,
+    "total_ask_volume": 71943.0,
+    "depth_ratio": 0.09240648847003878,
+    "whale_bids": 6645.0,
+    "whale_asks": 71943.0,
+    "whale_activity_score": 0.9999618276901935,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:33.278854+00:00",
+    "price": 4534.27,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172869442.0,
+    "weighted_avg_price": 4546.7376069,
+    "price_change_24h": 85.15,
+    "price_change_pct_24h": 1.914,
+    "volume_change_pct": 0,
+    "trade_count": 551670,
+    "best_bid": 4534.27,
+    "best_ask": 4534.28,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 451.0,
+    "ask_quantity": 43132.0,
+    "orderbook_imbalance": -0.9757477768795473,
+    "bids_depth": [
+      [
+        4534.27,
+        451.0
+      ],
+      [
+        4534.21,
+        1.0
+      ],
+      [
+        4534.2,
+        1.0
+      ],
+      [
+        4534.14,
+        1.0
+      ],
+      [
+        4534.01,
+        101.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.28,
+        43132.0
+      ],
+      [
+        4534.35,
+        722.0
+      ],
+      [
+        4534.37,
+        309.0
+      ],
+      [
+        4534.42,
+        1.0
+      ],
+      [
+        4534.43,
+        1050.0
+      ]
+    ],
+    "total_bid_volume": 555.0,
+    "total_ask_volume": 45214.0,
+    "depth_ratio": 0.012274959083469721,
+    "whale_bids": 552.0,
+    "whale_asks": 45213.0,
+    "whale_activity_score": 0.9999126046013678,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:35.690905+00:00",
+    "price": 4533.98,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172869549.0,
+    "weighted_avg_price": 4546.73759901,
+    "price_change_24h": 84.86,
+    "price_change_pct_24h": 1.907,
+    "volume_change_pct": 0,
+    "trade_count": 551678,
+    "best_bid": 4533.95,
+    "best_ask": 4533.96,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 5861.0,
+    "ask_quantity": 19793.0,
+    "orderbook_imbalance": -0.7113964813069431,
+    "bids_depth": [
+      [
+        4533.95,
+        5861.0
+      ],
+      [
+        4533.88,
+        1.0
+      ],
+      [
+        4533.87,
+        1.0
+      ],
+      [
+        4533.81,
+        296.0
+      ],
+      [
+        4533.79,
+        1190.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.96,
+        19793.0
+      ],
+      [
+        4534.03,
+        8375.0
+      ],
+      [
+        4534.18,
+        13048.0
+      ],
+      [
+        4534.19,
+        134.0
+      ],
+      [
+        4534.2,
+        2229.0
+      ]
+    ],
+    "total_bid_volume": 7349.0,
+    "total_ask_volume": 43579.0,
+    "depth_ratio": 0.16863626976295923,
+    "whale_bids": 7347.0,
+    "whale_asks": 43579.0,
+    "whale_activity_score": 0.9999607288721332,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:38.384711+00:00",
+    "price": 4533.96,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172869683.0,
+    "weighted_avg_price": 4546.73758907,
+    "price_change_24h": 84.84,
+    "price_change_pct_24h": 1.907,
+    "volume_change_pct": 0,
+    "trade_count": 551679,
+    "best_bid": 4533.95,
+    "best_ask": 4533.96,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 11072.0,
+    "ask_quantity": 205.0,
+    "orderbook_imbalance": 0.9423076923076923,
+    "bids_depth": [
+      [
+        4533.95,
+        11072.0
+      ],
+      [
+        4533.89,
+        200.0
+      ],
+      [
+        4533.88,
+        1.0
+      ],
+      [
+        4533.87,
+        1.0
+      ],
+      [
+        4533.85,
+        240.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.96,
+        205.0
+      ],
+      [
+        4533.97,
+        1.0
+      ],
+      [
+        4534.19,
+        134.0
+      ],
+      [
+        4534.2,
+        1.0
+      ],
+      [
+        4534.21,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 11514.0,
+    "total_ask_volume": 342.0,
+    "depth_ratio": 33.666666666666664,
+    "whale_bids": 11512.0,
+    "whale_asks": 339.0,
+    "whale_activity_score": 0.9995782726045884,
+    "large_orders_count": 5,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:40.638213+00:00",
+    "price": 4534.27,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172869825.0,
+    "weighted_avg_price": 4546.73757873,
+    "price_change_24h": 85.15,
+    "price_change_pct_24h": 1.914,
+    "volume_change_pct": 0,
+    "trade_count": 551687,
+    "best_bid": 4534.63,
+    "best_ask": 4534.64,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 32216.0,
+    "ask_quantity": 2857.0,
+    "orderbook_imbalance": 0.8480616038236856,
+    "bids_depth": [
+      [
+        4534.63,
+        32216.0
+      ],
+      [
+        4534.61,
+        495.0
+      ],
+      [
+        4534.53,
+        1107.0
+      ],
+      [
+        4534.52,
+        700.0
+      ],
+      [
+        4534.51,
+        281.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.64,
+        2857.0
+      ],
+      [
+        4534.66,
+        1.0
+      ],
+      [
+        4534.67,
+        1.0
+      ],
+      [
+        4534.68,
+        1.0
+      ],
+      [
+        4534.79,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 34799.0,
+    "total_ask_volume": 2861.0,
+    "depth_ratio": 12.16322963998602,
+    "whale_bids": 34799.0,
+    "whale_asks": 2857.0,
+    "whale_activity_score": 0.9998937865108869,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:43.044772+00:00",
+    "price": 4534.54,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172870200.0,
+    "weighted_avg_price": 4546.73755204,
+    "price_change_24h": 85.42,
+    "price_change_pct_24h": 1.92,
+    "volume_change_pct": 0,
+    "trade_count": 551692,
+    "best_bid": 4534.63,
+    "best_ask": 4534.64,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 25619.0,
+    "ask_quantity": 6854.0,
+    "orderbook_imbalance": 0.63719936394355,
+    "bids_depth": [
+      [
+        4534.63,
+        25619.0
+      ],
+      [
+        4534.56,
+        1744.0
+      ],
+      [
+        4534.55,
+        4521.0
+      ],
+      [
+        4534.51,
+        281.0
+      ],
+      [
+        4534.49,
+        782.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.64,
+        6854.0
+      ],
+      [
+        4534.66,
+        1.0
+      ],
+      [
+        4534.67,
+        1.0
+      ],
+      [
+        4534.68,
+        1.0
+      ],
+      [
+        4534.78,
+        444.0
+      ]
+    ],
+    "total_bid_volume": 32947.0,
+    "total_ask_volume": 7301.0,
+    "depth_ratio": 4.512669497329133,
+    "whale_bids": 32947.0,
+    "whale_asks": 7298.0,
+    "whale_activity_score": 0.9999254621347644,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:48.123932+00:00",
+    "price": 4534.63,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172871140.0,
+    "weighted_avg_price": 4546.73748603,
+    "price_change_24h": 85.51,
+    "price_change_pct_24h": 1.922,
+    "volume_change_pct": 0,
+    "trade_count": 551693,
+    "best_bid": 4534.63,
+    "best_ask": 4534.64,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 1844.0,
+    "ask_quantity": 27016.0,
+    "orderbook_imbalance": -0.6124881523393745,
+    "bids_depth": [
+      [
+        4534.63,
+        1844.0
+      ],
+      [
+        4534.62,
+        1.0
+      ],
+      [
+        4534.52,
+        4520.0
+      ],
+      [
+        4534.51,
+        281.0
+      ],
+      [
+        4534.48,
+        100.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.64,
+        27016.0
+      ],
+      [
+        4534.66,
+        1.0
+      ],
+      [
+        4534.67,
+        1.0
+      ],
+      [
+        4534.68,
+        1.0
+      ],
+      [
+        4534.74,
+        1052.0
+      ]
+    ],
+    "total_bid_volume": 6746.0,
+    "total_ask_volume": 28071.0,
+    "depth_ratio": 0.24031919062377544,
+    "whale_bids": 6745.0,
+    "whale_asks": 28068.0,
+    "whale_activity_score": 0.999885113593934,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:50.273208+00:00",
+    "price": 4534.27,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172872043.0,
+    "weighted_avg_price": 4546.7374226,
+    "price_change_24h": 85.15,
+    "price_change_pct_24h": 1.914,
+    "volume_change_pct": 0,
+    "trade_count": 551703,
+    "best_bid": 4534.27,
+    "best_ask": 4534.28,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 5978.0,
+    "ask_quantity": 14450.0,
+    "orderbook_imbalance": -0.46792727272727275,
+    "bids_depth": [
+      [
+        4534.27,
+        5978.0
+      ],
+      [
+        4534.19,
+        1.0
+      ],
+      [
+        4534.18,
+        1.0
+      ],
+      [
+        4534.14,
+        1.0
+      ],
+      [
+        4534.09,
+        1335.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.28,
+        14450.0
+      ],
+      [
+        4534.29,
+        1.0
+      ],
+      [
+        4534.4,
+        4308.0
+      ],
+      [
+        4534.41,
+        281.0
+      ],
+      [
+        4534.43,
+        1144.0
+      ]
+    ],
+    "total_bid_volume": 7316.0,
+    "total_ask_volume": 20184.0,
+    "depth_ratio": 0.3624653190646056,
+    "whale_bids": 7313.0,
+    "whale_asks": 20183.0,
+    "whale_activity_score": 0.9998545454545454,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:52.371390+00:00",
+    "price": 4534.28,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172872050.0,
+    "weighted_avg_price": 4546.73742209,
+    "price_change_24h": 85.16,
+    "price_change_pct_24h": 1.914,
+    "volume_change_pct": 0,
+    "trade_count": 551704,
+    "best_bid": 4534.27,
+    "best_ask": 4534.28,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 5926.0,
+    "ask_quantity": 17470.0,
+    "orderbook_imbalance": -0.4869694187442616,
+    "bids_depth": [
+      [
+        4534.27,
+        5926.0
+      ],
+      [
+        4534.19,
+        1.0
+      ],
+      [
+        4534.18,
+        1.0
+      ],
+      [
+        4534.14,
+        1.0
+      ],
+      [
+        4534.09,
+        1335.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.28,
+        17470.0
+      ],
+      [
+        4534.4,
+        824.0
+      ],
+      [
+        4534.41,
+        281.0
+      ],
+      [
+        4534.43,
+        1144.0
+      ],
+      [
+        4534.44,
+        1335.0
+      ]
+    ],
+    "total_bid_volume": 7264.0,
+    "total_ask_volume": 21054.0,
+    "depth_ratio": 0.34501757385769927,
+    "whale_bids": 7261.0,
+    "whale_asks": 21054.0,
+    "whale_activity_score": 0.999894060314994,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:55.219356+00:00",
+    "price": 4534.28,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172872235.0,
+    "weighted_avg_price": 4546.73740872,
+    "price_change_24h": 85.16,
+    "price_change_pct_24h": 1.914,
+    "volume_change_pct": 0,
+    "trade_count": 551705,
+    "best_bid": 4534.27,
+    "best_ask": 4534.28,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 5926.0,
+    "ask_quantity": 17471.0,
+    "orderbook_imbalance": -0.4826502876910586,
+    "bids_depth": [
+      [
+        4534.27,
+        5926.0
+      ],
+      [
+        4534.19,
+        1.0
+      ],
+      [
+        4534.18,
+        1.0
+      ],
+      [
+        4534.14,
+        346.0
+      ],
+      [
+        4534.13,
+        1054.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.28,
+        17471.0
+      ],
+      [
+        4534.4,
+        770.0
+      ],
+      [
+        4534.41,
+        281.0
+      ],
+      [
+        4534.43,
+        1144.0
+      ],
+      [
+        4534.44,
+        1335.0
+      ]
+    ],
+    "total_bid_volume": 7328.0,
+    "total_ask_volume": 21001.0,
+    "depth_ratio": 0.34893576496357315,
+    "whale_bids": 7326.0,
+    "whale_asks": 21001.0,
+    "whale_activity_score": 0.9999294009672067,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:19:58.645344+00:00",
+    "price": 4534.28,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172872236.0,
+    "weighted_avg_price": 4546.73740865,
+    "price_change_24h": 85.16,
+    "price_change_pct_24h": 1.914,
+    "volume_change_pct": 0,
+    "trade_count": 551706,
+    "best_bid": 4534.27,
+    "best_ask": 4534.28,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 9939.0,
+    "ask_quantity": 10597.0,
+    "orderbook_imbalance": -0.24602194545390396,
+    "bids_depth": [
+      [
+        4534.27,
+        9939.0
+      ],
+      [
+        4534.19,
+        1.0
+      ],
+      [
+        4534.18,
+        1.0
+      ],
+      [
+        4534.14,
+        1.0
+      ],
+      [
+        4534.13,
+        743.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.28,
+        10597.0
+      ],
+      [
+        4534.29,
+        1.0
+      ],
+      [
+        4534.41,
+        281.0
+      ],
+      [
+        4534.43,
+        20.0
+      ],
+      [
+        4534.45,
+        6759.0
+      ]
+    ],
+    "total_bid_volume": 10685.0,
+    "total_ask_volume": 17658.0,
+    "depth_ratio": 0.6051081662702458,
+    "whale_bids": 10682.0,
+    "whale_asks": 17637.0,
+    "whale_activity_score": 0.9991532300744452,
+    "large_orders_count": 5,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:01.121026+00:00",
+    "price": 4534.62,
+    "open_price": 4449.12,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172873655.0,
+    "weighted_avg_price": 4546.73730615,
+    "price_change_24h": 85.5,
+    "price_change_pct_24h": 1.922,
+    "volume_change_pct": 0,
+    "trade_count": 551716,
+    "best_bid": 4534.63,
+    "best_ask": 4534.64,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 15098.0,
+    "ask_quantity": 10324.0,
+    "orderbook_imbalance": 0.22795739114184266,
+    "bids_depth": [
+      [
+        4534.63,
+        15098.0
+      ],
+      [
+        4534.62,
+        679.0
+      ],
+      [
+        4534.61,
+        450.0
+      ],
+      [
+        4534.55,
+        100.0
+      ],
+      [
+        4534.5,
+        100.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.64,
+        10324.0
+      ],
+      [
+        4534.66,
+        1.0
+      ],
+      [
+        4534.67,
+        1.0
+      ],
+      [
+        4534.68,
+        1.0
+      ],
+      [
+        4534.79,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 16427.0,
+    "total_ask_volume": 10328.0,
+    "depth_ratio": 1.5905305964368706,
+    "whale_bids": 16427.0,
+    "whale_asks": 10324.0,
+    "whale_activity_score": 0.9998504952345356,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:03.358019+00:00",
+    "price": 4534.64,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172735115.0,
+    "weighted_avg_price": 4546.81765874,
+    "price_change_24h": 88.24,
+    "price_change_pct_24h": 1.985,
+    "volume_change_pct": 0,
+    "trade_count": 550976,
+    "best_bid": 4534.63,
+    "best_ask": 4534.64,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 15794.0,
+    "ask_quantity": 4231.0,
+    "orderbook_imbalance": 0.5359712230215827,
+    "bids_depth": [
+      [
+        4534.63,
+        15794.0
+      ],
+      [
+        4534.62,
+        963.0
+      ],
+      [
+        4534.61,
+        450.0
+      ],
+      [
+        4534.55,
+        100.0
+      ],
+      [
+        4534.54,
+        200.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.64,
+        4231.0
+      ],
+      [
+        4534.66,
+        1.0
+      ],
+      [
+        4534.67,
+        1.0
+      ],
+      [
+        4534.68,
+        1.0
+      ],
+      [
+        4534.79,
+        1055.0
+      ]
+    ],
+    "total_bid_volume": 17507.0,
+    "total_ask_volume": 5289.0,
+    "depth_ratio": 3.310077519379845,
+    "whale_bids": 17507.0,
+    "whale_asks": 5286.0,
+    "whale_activity_score": 0.9998683979645552,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:06.037268+00:00",
+    "price": 4534.27,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172735320.0,
+    "weighted_avg_price": 4546.81764408,
+    "price_change_24h": 87.87,
+    "price_change_pct_24h": 1.976,
+    "volume_change_pct": 0,
+    "trade_count": 550983,
+    "best_bid": 4534.25,
+    "best_ask": 4534.26,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 8297.0,
+    "ask_quantity": 39575.0,
+    "orderbook_imbalance": -0.7803968639068366,
+    "bids_depth": [
+      [
+        4534.25,
+        8297.0
+      ],
+      [
+        4534.22,
+        100.0
+      ],
+      [
+        4534.17,
+        200.0
+      ],
+      [
+        4534.14,
+        1.0
+      ],
+      [
+        4534.13,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.26,
+        39575.0
+      ],
+      [
+        4534.27,
+        4295.0
+      ],
+      [
+        4534.41,
+        12018.0
+      ],
+      [
+        4534.42,
+        2725.0
+      ],
+      [
+        4534.46,
+        11102.0
+      ]
+    ],
+    "total_bid_volume": 8599.0,
+    "total_ask_volume": 69715.0,
+    "depth_ratio": 0.12334504769418346,
+    "whale_bids": 8597.0,
+    "whale_asks": 69715.0,
+    "whale_activity_score": 0.9999744617820568,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:08.624472+00:00",
+    "price": 4534.26,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172735330.0,
+    "weighted_avg_price": 4546.81764335,
+    "price_change_24h": 87.86,
+    "price_change_pct_24h": 1.976,
+    "volume_change_pct": 0,
+    "trade_count": 550984,
+    "best_bid": 4534.25,
+    "best_ask": 4534.26,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 10954.0,
+    "ask_quantity": 3167.0,
+    "orderbook_imbalance": 0.10254350736278448,
+    "bids_depth": [
+      [
+        4534.25,
+        10954.0
+      ],
+      [
+        4534.14,
+        1.0
+      ],
+      [
+        4534.13,
+        1.0
+      ],
+      [
+        4534.11,
+        274.0
+      ],
+      [
+        4534.1,
+        1124.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.26,
+        3167.0
+      ],
+      [
+        4534.27,
+        1.0
+      ],
+      [
+        4534.42,
+        492.0
+      ],
+      [
+        4534.46,
+        6296.0
+      ],
+      [
+        4534.49,
+        100.0
+      ]
+    ],
+    "total_bid_volume": 12354.0,
+    "total_ask_volume": 10056.0,
+    "depth_ratio": 1.2285202863961815,
+    "whale_bids": 12352.0,
+    "whale_asks": 10055.0,
+    "whale_activity_score": 0.9998661311914324,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:11.004131+00:00",
+    "price": 4533.65,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172736779.0,
+    "weighted_avg_price": 4546.81753757,
+    "price_change_24h": 87.25,
+    "price_change_pct_24h": 1.962,
+    "volume_change_pct": 0,
+    "trade_count": 551009,
+    "best_bid": 4534.01,
+    "best_ask": 4534.02,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 29166.0,
+    "ask_quantity": 5470.0,
+    "orderbook_imbalance": 0.6384793256918372,
+    "bids_depth": [
+      [
+        4534.01,
+        29166.0
+      ],
+      [
+        4533.88,
+        533.0
+      ],
+      [
+        4533.82,
+        1351.0
+      ],
+      [
+        4533.81,
+        497.0
+      ],
+      [
+        4533.66,
+        1402.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.02,
+        5470.0
+      ],
+      [
+        4534.18,
+        1123.0
+      ],
+      [
+        4534.22,
+        1.0
+      ],
+      [
+        4534.23,
+        1.0
+      ],
+      [
+        4534.24,
+        675.0
+      ]
+    ],
+    "total_bid_volume": 32949.0,
+    "total_ask_volume": 7270.0,
+    "depth_ratio": 4.5321870701513065,
+    "whale_bids": 32949.0,
+    "whale_asks": 7268.0,
+    "whale_activity_score": 0.9999502722593799,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:15.629709+00:00",
+    "price": 4534.02,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172736905.0,
+    "weighted_avg_price": 4546.81752821,
+    "price_change_24h": 87.62,
+    "price_change_pct_24h": 1.971,
+    "volume_change_pct": 0,
+    "trade_count": 551010,
+    "best_bid": 4534.01,
+    "best_ask": 4534.02,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 29365.0,
+    "ask_quantity": 3961.0,
+    "orderbook_imbalance": 0.7471312137794094,
+    "bids_depth": [
+      [
+        4534.01,
+        29365.0
+      ],
+      [
+        4533.99,
+        290.0
+      ],
+      [
+        4533.88,
+        2128.0
+      ],
+      [
+        4533.85,
+        1192.0
+      ],
+      [
+        4533.84,
+        4860.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.02,
+        3961.0
+      ],
+      [
+        4534.18,
+        1.0
+      ],
+      [
+        4534.19,
+        1.0
+      ],
+      [
+        4534.22,
+        1.0
+      ],
+      [
+        4534.35,
+        1512.0
+      ]
+    ],
+    "total_bid_volume": 37835.0,
+    "total_ask_volume": 5476.0,
+    "depth_ratio": 6.909240321402484,
+    "whale_bids": 37835.0,
+    "whale_asks": 5473.0,
+    "whale_activity_score": 0.9999307335318972,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:18.168134+00:00",
+    "price": 4534.02,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172737355.0,
+    "weighted_avg_price": 4546.81749478,
+    "price_change_24h": 87.62,
+    "price_change_pct_24h": 1.971,
+    "volume_change_pct": 0,
+    "trade_count": 551017,
+    "best_bid": 4534.01,
+    "best_ask": 4534.02,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 29294.0,
+    "ask_quantity": 4899.0,
+    "orderbook_imbalance": 0.6852746793448447,
+    "bids_depth": [
+      [
+        4534.01,
+        29294.0
+      ],
+      [
+        4533.99,
+        290.0
+      ],
+      [
+        4533.94,
+        19.0
+      ],
+      [
+        4533.93,
+        1269.0
+      ],
+      [
+        4533.82,
+        1385.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.02,
+        4899.0
+      ],
+      [
+        4534.18,
+        1.0
+      ],
+      [
+        4534.19,
+        1.0
+      ],
+      [
+        4534.22,
+        1.0
+      ],
+      [
+        4534.34,
+        1122.0
+      ]
+    ],
+    "total_bid_volume": 32257.0,
+    "total_ask_volume": 6024.0,
+    "depth_ratio": 5.354747675962815,
+    "whale_bids": 32238.0,
+    "whale_asks": 6021.0,
+    "whale_activity_score": 0.9994253023693216,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:20.529242+00:00",
+    "price": 4534.02,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172737357.0,
+    "weighted_avg_price": 4546.81749463,
+    "price_change_24h": 87.62,
+    "price_change_pct_24h": 1.971,
+    "volume_change_pct": 0,
+    "trade_count": 551018,
+    "best_bid": 4534.01,
+    "best_ask": 4534.02,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 17357.0,
+    "ask_quantity": 9057.0,
+    "orderbook_imbalance": 0.2952506280655581,
+    "bids_depth": [
+      [
+        4534.01,
+        17357.0
+      ],
+      [
+        4533.99,
+        290.0
+      ],
+      [
+        4533.82,
+        921.0
+      ],
+      [
+        4533.81,
+        1473.0
+      ],
+      [
+        4533.79,
+        1613.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.02,
+        9057.0
+      ],
+      [
+        4534.16,
+        549.0
+      ],
+      [
+        4534.17,
+        1052.0
+      ],
+      [
+        4534.18,
+        1123.0
+      ],
+      [
+        4534.22,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 21654.0,
+    "total_ask_volume": 11782.0,
+    "depth_ratio": 1.8378883041928364,
+    "whale_bids": 21654.0,
+    "whale_asks": 11781.0,
+    "whale_activity_score": 0.9999700921162819,
+    "large_orders_count": 9,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:22.906151+00:00",
+    "price": 4534.68,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172739356.0,
+    "weighted_avg_price": 4546.81735171,
+    "price_change_24h": 88.28,
+    "price_change_pct_24h": 1.985,
+    "volume_change_pct": 0,
+    "trade_count": 551047,
+    "best_bid": 4534.78,
+    "best_ask": 4534.79,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 13063.0,
+    "ask_quantity": 7633.0,
+    "orderbook_imbalance": 0.11004348059477159,
+    "bids_depth": [
+      [
+        4534.78,
+        13063.0
+      ],
+      [
+        4534.77,
+        2780.0
+      ],
+      [
+        4534.72,
+        4520.0
+      ],
+      [
+        4534.71,
+        292.0
+      ],
+      [
+        4534.67,
+        24.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.79,
+        7633.0
+      ],
+      [
+        4534.86,
+        1.0
+      ],
+      [
+        4534.87,
+        1.0
+      ],
+      [
+        4534.92,
+        1.0
+      ],
+      [
+        4535.03,
+        8943.0
+      ]
+    ],
+    "total_bid_volume": 20679.0,
+    "total_ask_volume": 16579.0,
+    "depth_ratio": 1.2473008022196754,
+    "whale_bids": 20679.0,
+    "whale_asks": 16576.0,
+    "whale_activity_score": 0.9999194803800526,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:28.323847+00:00",
+    "price": 4534.78,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172740856.0,
+    "weighted_avg_price": 4546.81724691,
+    "price_change_24h": 88.38,
+    "price_change_pct_24h": 1.988,
+    "volume_change_pct": 0,
+    "trade_count": 551048,
+    "best_bid": 4534.78,
+    "best_ask": 4534.79,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 6501.0,
+    "ask_quantity": 14404.0,
+    "orderbook_imbalance": -0.3894567646984956,
+    "bids_depth": [
+      [
+        4534.78,
+        6501.0
+      ],
+      [
+        4534.71,
+        292.0
+      ],
+      [
+        4534.59,
+        1398.0
+      ],
+      [
+        4534.58,
+        2427.0
+      ],
+      [
+        4534.57,
+        1537.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.79,
+        14404.0
+      ],
+      [
+        4534.86,
+        1.0
+      ],
+      [
+        4534.87,
+        1.0
+      ],
+      [
+        4534.92,
+        1.0
+      ],
+      [
+        4534.97,
+        13255.0
+      ]
+    ],
+    "total_bid_volume": 12155.0,
+    "total_ask_volume": 27662.0,
+    "depth_ratio": 0.4394114669944328,
+    "whale_bids": 12155.0,
+    "whale_asks": 27659.0,
+    "whale_activity_score": 0.9999246552979884,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:31.045637+00:00",
+    "price": 4534.14,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172742931.0,
+    "weighted_avg_price": 4546.817101,
+    "price_change_24h": 87.74,
+    "price_change_pct_24h": 1.973,
+    "volume_change_pct": 0,
+    "trade_count": 551064,
+    "best_bid": 4534.05,
+    "best_ask": 4534.06,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 6178.0,
+    "ask_quantity": 31246.0,
+    "orderbook_imbalance": -0.8131434009054471,
+    "bids_depth": [
+      [
+        4534.05,
+        6178.0
+      ],
+      [
+        4534.01,
+        1.0
+      ],
+      [
+        4534.0,
+        1.0
+      ],
+      [
+        4533.92,
+        100.0
+      ],
+      [
+        4533.91,
+        200.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.06,
+        31246.0
+      ],
+      [
+        4534.17,
+        6718.0
+      ],
+      [
+        4534.18,
+        11997.0
+      ],
+      [
+        4534.2,
+        10500.0
+      ],
+      [
+        4534.28,
+        2417.0
+      ]
+    ],
+    "total_bid_volume": 6480.0,
+    "total_ask_volume": 62878.0,
+    "depth_ratio": 0.10305671299977735,
+    "whale_bids": 6478.0,
+    "whale_asks": 62878.0,
+    "whale_activity_score": 0.999971164105078,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:36.018408+00:00",
+    "price": 4534.05,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172743026.0,
+    "weighted_avg_price": 4546.81709396,
+    "price_change_24h": 87.65,
+    "price_change_pct_24h": 1.971,
+    "volume_change_pct": 0,
+    "trade_count": 551065,
+    "best_bid": 4534.05,
+    "best_ask": 4534.06,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 6900.0,
+    "ask_quantity": 17360.0,
+    "orderbook_imbalance": -0.669369909987141,
+    "bids_depth": [
+      [
+        4534.05,
+        6900.0
+      ],
+      [
+        4534.04,
+        2640.0
+      ],
+      [
+        4534.01,
+        1.0
+      ],
+      [
+        4534.0,
+        1.0
+      ],
+      [
+        4533.92,
+        100.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.06,
+        17360.0
+      ],
+      [
+        4534.17,
+        3134.0
+      ],
+      [
+        4534.2,
+        10500.0
+      ],
+      [
+        4534.26,
+        5692.0
+      ],
+      [
+        4534.27,
+        11997.0
+      ]
+    ],
+    "total_bid_volume": 9642.0,
+    "total_ask_volume": 48683.0,
+    "depth_ratio": 0.1980568165478709,
+    "whale_bids": 9640.0,
+    "whale_asks": 48683.0,
+    "whale_activity_score": 0.9999657093870553,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:39.923705+00:00",
+    "price": 4534.05,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172743097.0,
+    "weighted_avg_price": 4546.8170887,
+    "price_change_24h": 87.65,
+    "price_change_pct_24h": 1.971,
+    "volume_change_pct": 0,
+    "trade_count": 551066,
+    "best_bid": 4534.05,
+    "best_ask": 4534.06,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 6495.0,
+    "ask_quantity": 18810.0,
+    "orderbook_imbalance": -0.6911890075723384,
+    "bids_depth": [
+      [
+        4534.05,
+        6495.0
+      ],
+      [
+        4534.04,
+        2640.0
+      ],
+      [
+        4534.01,
+        1.0
+      ],
+      [
+        4534.0,
+        1.0
+      ],
+      [
+        4533.92,
+        100.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.06,
+        18810.0
+      ],
+      [
+        4534.11,
+        8699.0
+      ],
+      [
+        4534.12,
+        11997.0
+      ],
+      [
+        4534.18,
+        580.0
+      ],
+      [
+        4534.2,
+        10500.0
+      ]
+    ],
+    "total_bid_volume": 9237.0,
+    "total_ask_volume": 50586.0,
+    "depth_ratio": 0.18259992883406476,
+    "whale_bids": 9235.0,
+    "whale_asks": 50586.0,
+    "whale_activity_score": 0.9999665680423917,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:41.992483+00:00",
+    "price": 4533.35,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172745949.0,
+    "weighted_avg_price": 4546.81687694,
+    "price_change_24h": 86.95,
+    "price_change_pct_24h": 1.956,
+    "volume_change_pct": 0,
+    "trade_count": 551086,
+    "best_bid": 4533.35,
+    "best_ask": 4533.36,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 6923.0,
+    "ask_quantity": 39322.0,
+    "orderbook_imbalance": -0.7181293363698956,
+    "bids_depth": [
+      [
+        4533.35,
+        6923.0
+      ],
+      [
+        4533.34,
+        12.0
+      ],
+      [
+        4533.23,
+        1.0
+      ],
+      [
+        4533.22,
+        1.0
+      ],
+      [
+        4533.21,
+        1046.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.36,
+        39322.0
+      ],
+      [
+        4533.37,
+        2410.0
+      ],
+      [
+        4533.48,
+        171.0
+      ],
+      [
+        4533.5,
+        572.0
+      ],
+      [
+        4533.59,
+        6185.0
+      ]
+    ],
+    "total_bid_volume": 7983.0,
+    "total_ask_volume": 48660.0,
+    "depth_ratio": 0.16405672009864364,
+    "whale_bids": 7969.0,
+    "whale_asks": 48660.0,
+    "whale_activity_score": 0.9997528379499674,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:53.964750+00:00",
+    "price": 4533.36,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172747149.0,
+    "weighted_avg_price": 4546.81678318,
+    "price_change_24h": 86.96,
+    "price_change_pct_24h": 1.956,
+    "volume_change_pct": 0,
+    "trade_count": 551087,
+    "best_bid": 4533.35,
+    "best_ask": 4533.36,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 10592.0,
+    "ask_quantity": 2704.0,
+    "orderbook_imbalance": 0.6181457546868002,
+    "bids_depth": [
+      [
+        4533.35,
+        10592.0
+      ],
+      [
+        4533.34,
+        12.0
+      ],
+      [
+        4533.23,
+        1.0
+      ],
+      [
+        4533.22,
+        994.0
+      ],
+      [
+        4533.21,
+        1046.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.36,
+        2704.0
+      ],
+      [
+        4533.53,
+        1.0
+      ],
+      [
+        4533.54,
+        2.0
+      ],
+      [
+        4533.56,
+        276.0
+      ],
+      [
+        4533.62,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 12645.0,
+    "total_ask_volume": 2984.0,
+    "depth_ratio": 4.237600536193029,
+    "whale_bids": 12632.0,
+    "whale_asks": 2980.0,
+    "whale_activity_score": 0.998912278456715,
+    "large_orders_count": 5,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:20:56.229467+00:00",
+    "price": 4534.27,
+    "open_price": 4446.4,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172747288.0,
+    "weighted_avg_price": 4546.81677238,
+    "price_change_24h": 87.87,
+    "price_change_pct_24h": 1.976,
+    "volume_change_pct": 0,
+    "trade_count": 551108,
+    "best_bid": 4534.28,
+    "best_ask": 4534.29,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 22191.0,
+    "ask_quantity": 13719.0,
+    "orderbook_imbalance": 0.13873073794816557,
+    "bids_depth": [
+      [
+        4534.28,
+        22191.0
+      ],
+      [
+        4534.14,
+        867.0
+      ],
+      [
+        4534.13,
+        1107.0
+      ],
+      [
+        4534.11,
+        1246.0
+      ],
+      [
+        4534.05,
+        490.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.29,
+        13719.0
+      ],
+      [
+        4534.39,
+        1350.0
+      ],
+      [
+        4534.4,
+        4519.0
+      ],
+      [
+        4534.42,
+        1.0
+      ],
+      [
+        4534.43,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 25901.0,
+    "total_ask_volume": 19590.0,
+    "depth_ratio": 1.3221541602858602,
+    "whale_bids": 25901.0,
+    "whale_asks": 19588.0,
+    "whale_activity_score": 0.9999560352597217,
+    "large_orders_count": 8,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:21:12.976714+00:00",
+    "price": 4534.28,
+    "open_price": 4444.46,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172576306.0,
+    "weighted_avg_price": 4546.92035863,
+    "price_change_24h": 89.82,
+    "price_change_pct_24h": 2.021,
+    "volume_change_pct": 0,
+    "trade_count": 549925,
+    "best_bid": 4534.28,
+    "best_ask": 4534.29,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 4993.0,
+    "ask_quantity": 15845.0,
+    "orderbook_imbalance": -0.32871398733547724,
+    "bids_depth": [
+      [
+        4534.28,
+        4993.0
+      ],
+      [
+        4534.17,
+        313.0
+      ],
+      [
+        4534.09,
+        4517.0
+      ],
+      [
+        4534.02,
+        300.0
+      ],
+      [
+        4534.01,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.29,
+        15845.0
+      ],
+      [
+        4534.4,
+        1.0
+      ],
+      [
+        4534.41,
+        1.0
+      ],
+      [
+        4534.42,
+        21.0
+      ],
+      [
+        4534.43,
+        4171.0
+      ]
+    ],
+    "total_bid_volume": 10124.0,
+    "total_ask_volume": 20039.0,
+    "depth_ratio": 0.5052148310793951,
+    "whale_bids": 10123.0,
+    "whale_asks": 20016.0,
+    "whale_activity_score": 0.9992043231774028,
+    "large_orders_count": 6,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:21:15.009261+00:00",
+    "price": 4534.03,
+    "open_price": 4444.46,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172578628.0,
+    "weighted_avg_price": 4546.9201847,
+    "price_change_24h": 89.57,
+    "price_change_pct_24h": 2.015,
+    "volume_change_pct": 0,
+    "trade_count": 549934,
+    "best_bid": 4534.02,
+    "best_ask": 4534.03,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 4877.0,
+    "ask_quantity": 70902.0,
+    "orderbook_imbalance": -0.8772631261315631,
+    "bids_depth": [
+      [
+        4534.02,
+        4877.0
+      ],
+      [
+        4534.01,
+        1.0
+      ],
+      [
+        4534.0,
+        1.0
+      ],
+      [
+        4533.98,
+        1.0
+      ],
+      [
+        4533.88,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.03,
+        70902.0
+      ],
+      [
+        4534.1,
+        20.0
+      ],
+      [
+        4534.11,
+        282.0
+      ],
+      [
+        4534.26,
+        100.0
+      ],
+      [
+        4534.28,
+        3351.0
+      ]
+    ],
+    "total_bid_volume": 4881.0,
+    "total_ask_volume": 74655.0,
+    "depth_ratio": 0.06538075145670082,
+    "whale_bids": 4877.0,
+    "whale_asks": 74635.0,
+    "whale_activity_score": 0.9996982498491249,
+    "large_orders_count": 5,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:21:26.430860+00:00",
+    "price": 4534.03,
+    "open_price": 4444.46,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172578638.0,
+    "weighted_avg_price": 4546.92018396,
+    "price_change_24h": 89.57,
+    "price_change_pct_24h": 2.015,
+    "volume_change_pct": 0,
+    "trade_count": 549935,
+    "best_bid": 4534.02,
+    "best_ask": 4534.03,
+    "real_spread": 0.009999999999308784,
+    "bid_quantity": 4967.0,
+    "ask_quantity": 35650.0,
+    "orderbook_imbalance": -0.7618226246945522,
+    "bids_depth": [
+      [
+        4534.02,
+        4967.0
+      ],
+      [
+        4534.01,
+        1.0
+      ],
+      [
+        4534.0,
+        1.0
+      ],
+      [
+        4533.98,
+        1.0
+      ],
+      [
+        4533.88,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4534.03,
+        35650.0
+      ],
+      [
+        4534.1,
+        258.0
+      ],
+      [
+        4534.11,
+        282.0
+      ],
+      [
+        4534.19,
+        580.0
+      ],
+      [
+        4534.2,
+        1.0
+      ]
+    ],
+    "total_bid_volume": 4971.0,
+    "total_ask_volume": 36771.0,
+    "depth_ratio": 0.13518805580484622,
+    "whale_bids": 4967.0,
+    "whale_asks": 36770.0,
+    "whale_activity_score": 0.9998802165684443,
+    "large_orders_count": 5,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:21:28.303729+00:00",
+    "price": 4533.88,
+    "open_price": 4444.46,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172578656.0,
+    "weighted_avg_price": 4546.9201826,
+    "price_change_24h": 89.42,
+    "price_change_pct_24h": 2.012,
+    "volume_change_pct": 0,
+    "trade_count": 549943,
+    "best_bid": 4533.76,
+    "best_ask": 4533.77,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 8222.0,
+    "ask_quantity": 15552.0,
+    "orderbook_imbalance": -0.47067159409819664,
+    "bids_depth": [
+      [
+        4533.76,
+        8222.0
+      ],
+      [
+        4533.75,
+        1.0
+      ],
+      [
+        4533.74,
+        1.0
+      ],
+      [
+        4533.64,
+        1300.0
+      ],
+      [
+        4533.62,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.77,
+        15552.0
+      ],
+      [
+        4534.0,
+        1169.0
+      ],
+      [
+        4534.01,
+        5979.0
+      ],
+      [
+        4534.02,
+        2235.0
+      ],
+      [
+        4534.03,
+        1529.0
+      ]
+    ],
+    "total_bid_volume": 9525.0,
+    "total_ask_volume": 26464.0,
+    "depth_ratio": 0.35992291414752114,
+    "whale_bids": 9522.0,
+    "whale_asks": 26464.0,
+    "whale_activity_score": 0.9999166411959209,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  },
+  {
+    "timestamp": "2025-10-05T16:21:35.974134+00:00",
+    "price": 4533.77,
+    "open_price": 4444.46,
+    "high_price": 4621.43,
+    "low_price": 4440.27,
+    "volume": 172578660.0,
+    "weighted_avg_price": 4546.9201823,
+    "price_change_24h": 89.31,
+    "price_change_pct_24h": 2.009,
+    "volume_change_pct": 0,
+    "trade_count": 549944,
+    "best_bid": 4533.76,
+    "best_ask": 4533.77,
+    "real_spread": 0.010000000000218279,
+    "bid_quantity": 15787.0,
+    "ask_quantity": 15041.0,
+    "orderbook_imbalance": -0.269595691939482,
+    "bids_depth": [
+      [
+        4533.76,
+        15787.0
+      ],
+      [
+        4533.75,
+        1.0
+      ],
+      [
+        4533.74,
+        1.0
+      ],
+      [
+        4533.64,
+        1300.0
+      ],
+      [
+        4533.62,
+        1.0
+      ]
+    ],
+    "asks_depth": [
+      [
+        4533.77,
+        15041.0
+      ],
+      [
+        4533.97,
+        1444.0
+      ],
+      [
+        4533.98,
+        2925.0
+      ],
+      [
+        4533.99,
+        9800.0
+      ],
+      [
+        4534.0,
+        496.0
+      ]
+    ],
+    "total_bid_volume": 17090.0,
+    "total_ask_volume": 29706.0,
+    "depth_ratio": 0.5753046522588029,
+    "whale_bids": 17087.0,
+    "whale_asks": 29706.0,
+    "whale_activity_score": 0.9999358919565775,
+    "large_orders_count": 7,
+    "taker_buy_volume": 0,
+    "taker_sell_volume": 0,
+    "buy_sell_ratio": 1.0,
+    "market_momentum": 0
+  }
+]

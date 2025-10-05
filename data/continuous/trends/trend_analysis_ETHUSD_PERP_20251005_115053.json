@@ -1,0 +1,38 @@
+[
+  {
+    "timeframe": "5m",
+    "direction": "bearish",
+    "strength": 100.0,
+    "duration_minutes": 5,
+    "price_change_pct": 0.0,
+    "volume_confirmation": false,
+    "confidence": 68.0
+  },
+  {
+    "timeframe": "5m",
+    "direction": "bearish",
+    "strength": 100.0,
+    "duration_minutes": 6,
+    "price_change_pct": 0.0,
+    "volume_confirmation": false,
+    "confidence": 68.0
+  },
+  {
+    "timeframe": "5m",
+    "direction": "bearish",
+    "strength": 100.0,
+    "duration_minutes": 7,
+    "price_change_pct": 0.0,
+    "volume_confirmation": false,
+    "confidence": 68.0
+  },
+  {
+    "timeframe": "5m",
+    "direction": "bearish",
+    "strength": 100.0,
+    "duration_minutes": 8,
+    "price_change_pct": 0.0,
+    "volume_confirmation": false,
+    "confidence": 68.0
+  }
+]
